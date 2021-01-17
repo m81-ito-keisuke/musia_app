@@ -1079,6 +1079,12 @@ footer p {
   justify-content: center;
 }
 
+.row3{
+  display: flex;
+  align-items : center;
+  flex-direction: column;
+}
+
 h2{
   display: flex;
   justify-content: center;
