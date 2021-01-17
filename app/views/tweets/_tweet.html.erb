@@ -1,11 +1,9 @@
  <div class="content_post" style="background-image: url(<%= tweet.image %>);" >
+ <%= link_to image_tag(tweet.image.variant(resize:'240x240')),tweet_path(tweet.id), class: 'music-image' if tweet.image.attached? %>
  <% link_to 'リンク', tweet_path(tweet.id), method: :get %>
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
         <ul class="more_list">
-         <li>
-          <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
-         </li>
           <% if user_signed_in? && current_user.id == tweet.user_id %>
           <li>
            <%= link_to '編集',  edit_tweet_path(tweet.id), method: :get %>
@@ -16,5 +14,8 @@
           <% end %>
         </ul>
       </div>
-      <p><%= tweet.text %>/<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></p>
-    </div>
+  <div class="info">
+    <div class="info_show1"><%= tweet.title %>/<%= tweet.artist_name %></div>
+    <div class="info_show2">Upload by&nbsp;<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></div>
+  </div>
+</div>

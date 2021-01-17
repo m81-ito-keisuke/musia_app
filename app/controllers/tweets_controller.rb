@@ -19,6 +19,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+    redirect_to action: :index
   end
 
   def edit
@@ -40,7 +41,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:image, :title, :artist_name).merge(user_id: current_user.id)
   end
 
   def set_tweet

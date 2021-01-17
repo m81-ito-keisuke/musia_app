@@ -1,5 +1,6 @@
 <div class="contents row row3">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
+  <%= link_to image_tag(@tweet.image.variant(resize:'240x240')),tweet_path(@tweet.id), class: 'music-image' if @tweet.image.attached? %>
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>

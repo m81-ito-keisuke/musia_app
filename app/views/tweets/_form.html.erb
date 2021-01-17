@@ -1,3 +1,8 @@
-      <%= image_tag @tweet.image.variant(resize: '240*240'), class:   "music_image" if @tweet.image.attached? %>
-      <%= form.text_area :text, placeholder: "text", rows: "10" %>
+      <%# form.text_field :image, placeholder: "Image Url" %>
+　　　<div class="row2">Music Image</div>
+      <%= form.file_field :image, id:"music_image" %>
+      <div class="row2">Music Title</div>
+      <%= form.text_field :title, placeholder: "Music Title", rows: "10" %>
+      <div class="row2">Artist Name</div>
+      <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
       <%= form.submit "SEND" %>
