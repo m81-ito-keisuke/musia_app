@@ -15,7 +15,19 @@
         </ul>
       </div>
   <div class="info">
-    <div class="info_show1"><%= tweet.title %>/<%= tweet.artist_name %></div>
-    <div class="info_show2">Upload by&nbsp;<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></div>
+    <div class="info_show1">
+    <% if tweet.title.length > 13 %>
+      <%= tweet.title.slice(0, 11)... %>
+    <% else %>
+      <%= tweet.title %>
+    <% end %>
+    </div>
+    <div class="info_show2">
+    <% if tweet.artist_name.length > 13 %> 
+      <%= tweet.artist_name.slice(0, 11)... %>
+    <% else %>
+      <%= tweet.artist_name %>
+    <% end %></div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></div>
   </div>
 </div>

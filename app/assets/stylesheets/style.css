@@ -1109,7 +1109,7 @@ h2{
   position: absolute;
   left: 5px;
   /*right: 0px;*/
-  bottom: -50px;
+  bottom: -68px;
   margin: 0px;
   font-size: 16px;
   z-index: 2;
@@ -1124,6 +1124,10 @@ h2{
 }
 
 .info_show2{
+  display: flex;
+}
+
+.info_show3{
   display: flex;
   font-size: 10px;
   font-family: 'Roboto','Noto Sans JP',sans-serif;
