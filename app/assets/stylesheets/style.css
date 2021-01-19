@@ -863,7 +863,7 @@ div.contents.row .new_user {
 }
 
 div.contents.row div.content_post {
-  margin: 20px 15px 50px 15px;
+  margin: 20px 15px 115px 15px;
   /*padding: 30px;*/
   position: relative;
   height: 240px;
@@ -994,7 +994,7 @@ div.contents.row .success h3 {
 form input,
 form textarea {
   width: 100%;
-  margin: 5px 0 15px;
+  margin: 5px 0 7px;
   padding: 10px;
   border: 1px solid #D8D8D8;
   border-radius: 5px;
@@ -1056,7 +1056,7 @@ footer p {
 
 .search-form {
   text-align: center;
-  padding-top: 32px;
+  padding-top: 20px;
 }
 
 .search-form .search-input {
