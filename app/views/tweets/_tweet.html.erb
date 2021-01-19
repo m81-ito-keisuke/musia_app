@@ -16,18 +16,19 @@
       </div>
   <div class="info">
     <div class="info_show1">
-    <% if tweet.title.length > 13 %>
+    <% if tweet.title.encode("EUC-JP").bytesize > 24 %>
       <%= tweet.title.slice(0, 11)... %>
     <% else %>
       <%= tweet.title %>
     <% end %>
     </div>
     <div class="info_show2">
-    <% if tweet.artist_name.length > 13 %> 
+    <% if tweet.artist_name.encode("EUC-JP").bytesize > 24 %> 
       <%= tweet.artist_name.slice(0, 11)... %>
     <% else %>
       <%= tweet.artist_name %>
     <% end %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></div>
+    <div class="info_show4">50000円</div>
   </div>
 </div>
