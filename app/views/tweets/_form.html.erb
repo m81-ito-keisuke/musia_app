@@ -1,8 +1,10 @@
       <%# form.text_field :image, placeholder: "Image Url" %>
-　　　<div class="row2">Music Image</div>
+　　　<div class="row2">ジャケット写真</div>
       <%= form.file_field :image, id:"music_image" %>
-      <div class="row2">Music Title</div>
-      <%= form.text_field :title, placeholder: "Music Title", rows: "10" %>
-      <div class="row2">Artist Name</div>
+      <div class="row2">アルバム名</div>
+      <%= form.text_field :title, placeholder: "Album Title", rows: "10" %>
+      <div class="row2">アーティスト名</div>
       <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
+      <div class="row2">販売価格</div>
+      <%= form.text_field :price, placeholder: "Price", rows: "10" %>
       <%= form.submit "SEND" %>

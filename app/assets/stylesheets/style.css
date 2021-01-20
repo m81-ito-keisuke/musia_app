@@ -753,11 +753,13 @@ header.header {
 header.header div.header__bar.row {
   position: relative;
   justify-content: center;
+  height: 50px;
 }
 
 header.header div.header__bar.row h1.grid-6 {
   font-size: 22px;
   line-height: 41px;
+  height: 41px;
   float: left;
 }
 
@@ -897,45 +899,49 @@ div.contents.row div.content_post:after {
 div.contents.row div.content_post .more {
   position: absolute;
   cursor: pointer;
-  top: 20px;
-  right: 30px;
+  top: 0px;
+  right: 0px;
   z-index: 2;
-  height: 100px;
-  width: 80px;
+  height: 240px;
+  width: 240px;
   text-align: right;
 }
 
-div.contents.row div.content_post .more:hover ul.more_list {
+div.contents.row div.content_post div.more:hover ul.more_list {
   display: block;
+  
 }
 
-div.contents.row div.content_post .more ul.more_list {
+
+div.contents.row div.content_post div.more ul.more_list {
   position: absolute;
-  text-align: left;
-  width: 80px;
-  right: 0;
-  font-size: 12px;
+  text-align: center;
+  width: 105px;
+  right: -106px;
+  bottom: 0;
+  font-size: 16px;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 2px solid #57C3E9;
   display: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
+  font-family: 'Courier','Roboto','Noto Sans JP',sans-serif;
 }
 
-div.contents.row div.content_post .more ul.more_list li {
-  border-bottom: 1px solid #ddd;
+div.contents.row div.content_post ul.more_list li {
+  border-bottom: 1px solid #57C3E9;
 }
 
-div.contents.row div.content_post .more ul.more_list li:last-child {
+div.contents.row div.content_post ul.more_list li:last-child {
   border-bottom: 0;
 }
 
-div.contents.row div.content_post .more ul.more_list li a {
+div.contents.row div.content_post ul.more_list li a {
   display: block;
   padding: 5px;
 }
 
-div.contents.row div.content_post .more ul.more_list li a:hover {
+div.contents.row div.content_post ul.more_list li a:hover {
   background-color: #57C3E9;
   color: #fff;
 }
@@ -1020,7 +1026,7 @@ form input[type="submit"]:hover {
   background-color: white;
   box-sizing: border-box;
   width: 35%;
-  height:520px;
+  height:560px;
 }
 
 .container h3 {
@@ -1074,10 +1080,17 @@ footer p {
   font-size: 20px;
 }
 
-.row2{
+.row4{
   display: flex;
   justify-content: center;
 }
+
+.row2{
+  display: flex;
+  justify-content: flex-start;
+  margin:5px 0 5px 0;
+}
+
 
 .row3{
   display: flex;
@@ -1139,7 +1152,7 @@ h2{
 .info_show4{
   display: flex;
   justify-content: center;
-  font-size: 18px;
+  font-size: 16px;
   border: 2px solid #57C3E9;
-  margin: 10px 50px 0 50px;
+  margin: 10px 65px 0 65px;
 }
