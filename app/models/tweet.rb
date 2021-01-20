@@ -6,4 +6,6 @@ class Tweet < ApplicationRecord
   validates :title, presence: true
   validates :image, presence: true
   validates :artist_name, presence: true
+
+
 end

@@ -1,6 +1,6 @@
 <div class="contents row row3">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
-  <%= link_to image_tag(@tweet.image.variant(resize:'240x240')),tweet_path(@tweet.id), class: 'music-image' if @tweet.image.attached? %>
+  <%= link_to image_tag(@tweet.image.variant(resize:'240x240')),rails_blob_path(@tweet.image), class: 'music-image' if @tweet.image.attached? %>
     <% if user_signed_in? && current_user.id == @tweet.user_id %>
       <div class="more">
         <span><%= image_tag 'arrow_top.png' %></span>
@@ -14,9 +14,16 @@
         </ul>
       </div>
     <% end %>
-    <p><%= @tweet.title %>/<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></p>
-      </a>
-    </span>
+    <div class="info">
+    <div class="info_show1">
+      <%= @tweet.title %>
+    </div>
+    <div class="info_show2">
+      <%= @tweet.artist_name %>
+    </div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></div>
+    <div class="info_show4">50000円</div>
+  </div>
   </div>
   <div class="container2">
     <% if current_user %>
