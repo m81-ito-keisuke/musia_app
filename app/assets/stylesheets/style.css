@@ -471,6 +471,7 @@ ul li {
   max-width: 1400px;
   *zoom: 1;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   text-align: center;
 }

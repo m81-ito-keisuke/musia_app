@@ -16,6 +16,6 @@
       <%= tweet.artist_name %>
     <% end %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= tweet.user.id %>"><%= tweet.user.nickname %></a></div>
-    <div class="info_show4">500000円</div>
+    <div class="info_show4"><%= tweet.price %>円</div>
   </div>
 </div>

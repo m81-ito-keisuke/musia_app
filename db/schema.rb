@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2021_01_17_005645) do
     t.string "title"
     t.string "artist_name"
     t.text "image"
+    t.integer "price"
+    t.integer "cd_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

@@ -1,4 +1,4 @@
-<p class="index_title" ><%= @nickname %>さんのCD一覧</p>
+<p class="index_title" ><%= @nickname %>'s Music</p>
 <div class="contents row">
   <% @tweets.each do |tweet| %>
     <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
