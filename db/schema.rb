@@ -42,11 +42,10 @@ ActiveRecord::Schema.define(version: 2021_01_17_005645) do
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.string "artist_name"
-    t.text "image"
-    t.integer "price"
-    t.integer "cd_type_id"
+    t.string "title", null: false
+    t.string "artist_name", null: false
+    t.integer "price", null: false
+    t.integer "cd_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

@@ -13,7 +13,13 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
+    #Tweet.create(tweet_params)
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      render :create
+    else
+      render :new
+    end
   end
 
   def destroy
