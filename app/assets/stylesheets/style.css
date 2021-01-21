@@ -471,7 +471,7 @@ ul li {
   max-width: 1400px;
   *zoom: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   text-align: center;
 }
@@ -666,7 +666,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #5a3cf9;
+  color: #0076ff;
+}
+
+a.musia{
+  text-shadow: 3px 0 0 #fff, 0 3px 0 #fff, -3px 0 0 #fff, 0 -3px 0 #fff;
 }
 
 a:hover {
@@ -742,7 +746,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
-  background-color: #dcfff4;
+  background-color: #defbf2;
   position: fixed;
   top: 0;
   left: 0;
@@ -866,7 +870,7 @@ div.contents.row .new_user {
 }
 
 div.contents.row div.content_post {
-  margin: 20px 15px 115px 15px;
+  margin: 20px 15px 132px 15px;
   /*padding: 30px;*/
   position: relative;
   height: 240px;
@@ -1027,7 +1031,7 @@ form input[type="submit"]:hover {
   background-color: white;
   box-sizing: border-box;
   width: 35%;
-  height:560px;
+  height:620px;
 }
 
 .container h3 {
@@ -1088,7 +1092,7 @@ footer p {
 
 .row2{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin:5px 0 5px 0;
 }
 
@@ -1124,7 +1128,7 @@ h2{
   /*left: 5px;*/
   /*right: 0px;*/
   width: 240px;
-  bottom: -112px;
+  bottom: -125px;
   margin: 0px;
   font-size: 16px;
   z-index: 2;
@@ -1141,7 +1145,8 @@ h2{
 
 .info_show2{
   display: flex;
-  white-space: nowrap
+  justify-content: flex-start;
+  font-size: 10px;
 }
 
 .info_show3{

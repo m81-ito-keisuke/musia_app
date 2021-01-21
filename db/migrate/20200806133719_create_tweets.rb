@@ -6,7 +6,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.string :artist_name
       t.text :image
       t.integer :price
-      t.integer :cd_type
+      t.integer :cd_type_id
       t.timestamps
     end
   end
