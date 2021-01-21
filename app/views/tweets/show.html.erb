@@ -1,21 +1,29 @@
-<div class="contents row">
+<div class="contents row row3">
   <div class="content_post" style="background-image: url(<%= @tweet.image %>);">
-    <% if user_signed_in? && current_user.id == @tweet.user_id %>
-      <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
+    <div class="more">
+    <%= link_to image_tag(@tweet.image.variant(resize:'240x240')),rails_blob_path(@tweet.image), class: 'music_image' if @tweet.image.attached? %>
+      <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <ul class="more_list">
           <li>
-            <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+            <%= link_to 'EDIT', edit_tweet_path(@tweet.id), method: :get %>
           </li>
           <li>
-            <%= link_to '削除', tweet_path(@tweet.id), method: :delete %>
+            <%= link_to 'DELETE', tweet_path(@tweet.id), method: :delete %>
           </li>
         </ul>
-      </div>
     <% end %>
-    <p><%= @tweet.text %>/<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></p>
-      </a>
-    </span>
+    </div>
+    <div class="info">
+    <div class="info_show2"><%= @tweet.cd_type.name %></div>
+    <div class="info_show1">
+      <%= @tweet.title %>
+    </div>
+    <div class="info_show1">
+      <%= @tweet.artist_name %>
+    </div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></div>
+    <div class="info_show4"><%= @tweet.price %>円</div>
+    </div>
   </div>
   <div class="container2">
     <% if current_user %>

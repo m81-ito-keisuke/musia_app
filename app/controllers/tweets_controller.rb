@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
     query = "SELECT * FROM tweets"
-    @tweets = Tweet.find_by_sql(query)
+    #@tweets = Tweet.find_by_sql(query)
   end
   
   def new
@@ -19,6 +19,7 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+    redirect_to action: :index
   end
 
   def edit
@@ -40,7 +41,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:image, :title, :artist_name, :price, :cd_type_id).merge(user_id: current_user.id)
   end
 
   def set_tweet
