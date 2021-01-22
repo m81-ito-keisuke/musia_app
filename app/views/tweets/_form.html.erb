@@ -9,4 +9,6 @@
       <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
       <div class="row2">販売価格</div>
       <%= form.text_field :price, placeholder: "Price", rows: "10" %>
+      <div class="row2">音楽ファイル</div>
+      <%= form.file_field :file %>
       <%= form.submit "SEND" %>

@@ -25,6 +25,15 @@
     <div class="info_show4"><%= @tweet.price %>円</div>
     </div>
   </div>
+  <div>
+  
+
+  <audio src= "<%= "#{@tweet.file}" %>" controls="">
+         <a src="<%= "#{@tweet.file}" %>">ダウンロード</a>
+       </audio>
+  </div>
+
+
   <div class="container2">
     <% if current_user %>
       <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
