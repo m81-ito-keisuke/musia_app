@@ -28,8 +28,8 @@
   <div>
   
 
-  <audio src= "<%= "#{@tweet.file}" %>" controls="">
-         <a src="<%= "#{@tweet.file}" %>">ダウンロード</a>
+  <audio class="audio_file" src= "<%= "#{@tweet.file}" %>" controls="" controlslist="nodownload" oncontextmenu="return false;" >
+         <a src="<%= "#{@tweet.file}" %>" >ダウンロード</a>
        </audio>
   </div>
 
