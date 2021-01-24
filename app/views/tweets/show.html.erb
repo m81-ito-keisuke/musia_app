@@ -25,13 +25,26 @@
     <div class="info_show4"><%= @tweet.price %>円</div>
     </div>
   </div>
+  <!-- 再生プレイヤー -->
+  <%# audio_tag "#{@tweet.file}" %>
   <div>
-  
+  <audio src="<%= "#{@tweet.file}" %>"></audio>
+  <div id="play">Play</div>
+  <div id="stop">Stop</div>
+</div>
+<script>
+const audio = document.getElementsByTagName("audio")[0]
+const playButton = document.getElementById("play")
+const stopButton = document.getElementById("stop")
 
-  <audio class="audio_file" src= "<%= "#{@tweet.file}" %>" controls="" controlslist="nodownload" oncontextmenu="return false;" >
-         <a src="<%= "#{@tweet.file}" %>" >ダウンロード</a>
-       </audio>
-  </div>
+playButton.addEventListener('click', () => {
+  audio.play()
+})
+
+stopButton.addEventListener('click', () => {
+  audio.pause()
+})
+</script>
 
 
   <div class="container2">

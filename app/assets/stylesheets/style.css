@@ -1165,4 +1165,39 @@ h2{
 
 .audio_file{
   border: 2px solid #57C3E9;
+  display: none
+}
+
+#play{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 1em;
+  border-radius: 50%;
+  background: #ddd;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+#play:hover {
+  background: #eee;
+}
+
+audio {
+  display: none
+}
+#play, #stop {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin: 1em;
+  border-radius: 50%;
+  background: #ddd;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
+}
+#play:hover, #stop:hover {
+  background: #eee;
 }
