@@ -1168,36 +1168,17 @@ h2{
   display: none
 }
 
-#play{
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  margin: 1em;
-  border-radius: 50%;
-  background: #ddd;
-  text-align: center;
-  line-height: 60px;
-  cursor: pointer;
+.title {
+  width: 30px;
+  height:30px;
+  background-size:30px 30px;
+  background-image: url("regeneration.png");
+  
 }
 
-#play:hover {
-  background: #eee;
-}
-
-audio {
-  display: none
-}
-#play, #stop {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  margin: 1em;
-  border-radius: 50%;
-  background: #ddd;
-  text-align: center;
-  line-height: 60px;
-  cursor: pointer;
-}
-#play:hover, #stop:hover {
-  background: #eee;
+.title.change {
+  background-image: url("stop.png");
+  width: 30px;
+  height:30px;
+  background-size:30px 30px;
 }
