@@ -15,77 +15,15 @@
     </div>
     <div class="info">
     <div class="info_show2"><%= @tweet.cd_type.name %></div>
-    <div class="info_show1">
-      <%= @tweet.title %>
-    </div>
-    <div class="info_show1">
-      <%= @tweet.artist_name %>
-    </div>
+    <div class="info_show1"><%= @tweet.title %></div>
+    <div class="info_show1"><%= @tweet.artist_name %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></div>
     <div class="info_show4"><%= @tweet.price %>円</div>
     </div>
   </div>
-  <!-- 再生プレイヤー -->
-  <%# audio_tag "#{@tweet.file}"%>
-  <audio src="<%= "#{@tweet.file}" %>#t=0,45" id="sound">
-  <p>HTML5に対応していません。</p>
-  </audio>
-  <a onclick="play();" id="play"> 
-  <%# image_tag 'saisei.png', :size => '30x30', id: 'imgid' %>
-  <div class="title"></div>
-  </a>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript">
-$(".title").on("click", function () {
-  $(this).toggleClass("change");
-});
-</script>
 
-
-
-  <a onclick="Volume(1);">音量を上げる</a>
-  <a onclick="Volume(-1);">音量を下げる</a>
-
-<script type="text/javascript">
-  var TARGET = document.getElementById('sound');
-  var isPlaying = false;
-
-  function play(){
-    if (isPlaying) {
-    TARGET.pause()
-    TARGET.currentTime = 0;
-    $(".change").toggleClass("title");
-  } else {
-    TARGET.currentTime = 0;
-    TARGET.play();
-  }
-};
-TARGET.onplaying = function() {
-  isPlaying = true;
-};
-TARGET.onpause = function() {
-  isPlaying = false;
-}; 
-
-function Volume(flag) {
-      if (0 < flag) {
-        if (0.9 < TARGET.volume) {
-          TARGET.volume = 1;
-        } else {
-          TARGET.volume += 0.1;
-        }
-      } else {
-        if (TARGET.volume < 0.1) {
-          TARGET.volume = 0;
-        }
-        else {
-          TARGET.volume -= 0.1;
-        }
-      }
-    }
-  </script>
-    
-
+  <%= render partial: "player", locals: { tweet: @tweet } %>
+  
   <div class="container2">
     <% if current_user %>
       <%= form_with(model: [@tweet, @comment], local: true) do |form| %>

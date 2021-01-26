@@ -14,6 +14,6 @@ class Tweet < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :cd_type
 
-  mount_uploader :file, AudiofileUploader
+  mount_uploader :music_file1, AudiofileUploader
 
 end
