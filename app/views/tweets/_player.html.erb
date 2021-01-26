@@ -121,3 +121,192 @@ function Volume(flag) {
   </script>
   <% end %>
 <!--再生プレイヤー2終了-->
+
+<!--再生プレイヤー3-->
+<% unless @tweet.music_file3.blank? %>
+<audio src="<%= "#{@tweet.music_file3}" %>#t=0,45" id="sound3">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play3();" id="play"> 
+      <div class="regeneration3"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration3").on("click", function () {
+      $(this).toggleClass("change3");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">3.<%= @tweet.music_title3 %></div>
+    </div>
+    
+<script>
+  var TARGET3 = document.getElementById('sound3');
+  var isPlaying = false;
+
+function play3(){
+  if (isPlaying) {
+  TARGET3.pause()
+  TARGET3.currentTime = 0;
+} else {
+  TARGET3.currentTime = 0;
+  TARGET3.play();
+}
+
+};
+TARGET3.onplaying = function() {
+isPlaying = true;
+};
+TARGET3.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET3.volume) {
+        TARGET3.volume = 1;
+      } else {
+        TARGET3.volume += 0.1;
+      }
+    } else {
+      if (TARGET3.volume < 0.1) {
+        TARGET3.volume = 0;
+      }
+      else {
+        TARGET3.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー3終了-->
+
+<!--再生プレイヤー4-->
+<% unless @tweet.music_file4.blank? %>
+<audio src="<%= "#{@tweet.music_file4}" %>#t=0,45" id="sound4">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play4();" id="play"> 
+      <div class="regeneration4"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration4").on("click", function () {
+      $(this).toggleClass("change4");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">4.<%= @tweet.music_title4 %></div>
+    </div>
+    
+<script>
+  var TARGET4 = document.getElementById('sound4');
+  var isPlaying = false;
+
+function play4(){
+  if (isPlaying) {
+  TARGET4.pause()
+  TARGET4.currentTime = 0;
+} else {
+  TARGET4.currentTime = 0;
+  TARGET4.play();
+}
+
+};
+TARGET4.onplaying = function() {
+isPlaying = true;
+};
+TARGET4.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET4.volume) {
+        TARGET4.volume = 1;
+      } else {
+        TARGET4.volume += 0.1;
+      }
+    } else {
+      if (TARGET4.volume < 0.1) {
+        TARGET4.volume = 0;
+      }
+      else {
+        TARGET4.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー4終了-->
+
+<!--再生プレイヤー5-->
+<% unless @tweet.music_file5.blank? %>
+<audio src="<%= "#{@tweet.music_file5}" %>#t=0,45" id="sound4">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play5();" id="play"> 
+      <div class="regeneration5"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration5").on("click", function () {
+      $(this).toggleClass("change5");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">5.<%= @tweet.music_title5 %></div>
+    </div>
+    
+<script>
+  var TARGET4 = document.getElementById('sound5');
+  var isPlaying = false;
+
+function play5(){
+  if (isPlaying) {
+  TARGET5.pause()
+  TARGET5.currentTime = 0;
+} else {
+  TARGET5.currentTime = 0;
+  TARGET5.play();
+}
+
+};
+TARGET5.onplaying = function() {
+isPlaying = true;
+};
+TARGET5.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET5.volume) {
+        TARGET5.volume = 1;
+      } else {
+        TARGET5.volume += 0.1;
+      }
+    } else {
+      if (TARGET5.volume < 0.1) {
+        TARGET5.volume = 0;
+      }
+      else {
+        TARGET5.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー4終了-->
