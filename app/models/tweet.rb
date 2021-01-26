@@ -15,5 +15,5 @@ class Tweet < ApplicationRecord
   belongs_to :cd_type
 
   mount_uploader :music_file1, AudiofileUploader
-
+  mount_uploader :music_file2, AudiofileUploader
 end

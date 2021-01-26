@@ -5,7 +5,7 @@
 
 <div class="original_player">
     <div class="player1">
-      <a onclick="play();" id="play"> 
+      <a onclick="play1();" id="play"> 
       <div class="regeneration1"></div>
       </a></div>
         
@@ -23,7 +23,7 @@
   var TARGET1 = document.getElementById('sound1');
   var isPlaying = false;
 
-function play(){
+function play1(){
   if (isPlaying) {
   TARGET1.pause()
   TARGET1.currentTime = 0;
@@ -42,7 +42,7 @@ isPlaying = false;
 
 function Volume(flag) {
     if (0 < flag) {
-      if (0.9 < TARGET2.volume) {
+      if (0.9 < TARGET1.volume) {
         TARGET1.volume = 1;
       } else {
         TARGET1.volume += 0.1;
@@ -67,7 +67,7 @@ function Volume(flag) {
 
 <div class="original_player">
     <div class="player1">
-      <a onclick="play();" id="play"> 
+      <a onclick="play2();" id="play"> 
       <div class="regeneration2"></div>
       </a></div>
         
@@ -85,7 +85,7 @@ function Volume(flag) {
   var TARGET2 = document.getElementById('sound2');
   var isPlaying = false;
 
-function play(){
+function play2(){
   if (isPlaying) {
   TARGET2.pause()
   TARGET2.currentTime = 0;
@@ -119,5 +119,5 @@ function Volume(flag) {
     }
   }
   </script>
+  <% end %>
 <!--再生プレイヤー2終了-->
-<% end %>

@@ -1,16 +1,21 @@
       <%# form.text_field :image, placeholder: "Image Url" %>
 　　　<div class="row2">ジャケット写真</div>
       <%= form.file_field :image, id:"music_image" %>
+       <div class="row2">アーティスト名</div>
+      <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
+      <div class="row2">CDタイトル</div>
+      <%= form.text_field :title, placeholder: "Album Title", rows: "10" %>
       <div class="row2">CD種別</div>
        <%= form.collection_select(:cd_type_id, CdType.all, :id, :name, {}, {class:"cd_type-select"}) %>
-      <div class="row2">アルバム名</div>
-      <%= form.text_field :title, placeholder: "Album Title", rows: "10" %>
-      <div class="row2">アーティスト名</div>
-      <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
       <div class="row2">販売価格</div>
       <%= form.text_field :price, placeholder: "Price", rows: "10" %>
-      <div class="row2">曲名1</div>
-      <%= form.text_field :music_title1 %>
+      <div class="row2">トラック1</div>
+      <%= form.text_field :music_title1, placeholder: "Track1", rows: "10" %>
       <div class="row2">音楽ファイル1</div>
       <%= form.file_field :music_file1 %>
+      <div class="row2">トラック2</div>
+      <%= form.text_field :music_title2, placeholder: "Track2", rows: "10" %>
+      <div class="row2">音楽ファイル2</div>
+      <%= form.file_field :music_file2 %>
+      
       <%= form.submit "SEND" %>

@@ -1030,8 +1030,8 @@ form input[type="submit"]:hover {
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
-  width: 35%;
-  height:620px;
+  width: 75%;
+  height: 75%;
 }
 
 .container h3 {
