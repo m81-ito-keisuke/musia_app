@@ -1168,14 +1168,14 @@ h2{
   display: none
 }
 
-.regeneration {
+.regeneration1, .regeneration2 {
   width: 34px;
   height:34px;
   background-size:34px 34px;
   background-image: url("regeneration.png");
 }
 
-.change {
+.change1, .change2 {
   background-image: url("stop.png");
   
 }
