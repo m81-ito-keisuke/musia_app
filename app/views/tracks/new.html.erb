@@ -1,0 +1,11 @@
+<div class="contents row row4">
+  <div class="container">
+<%= form_with(model: [@tweet, @track], local: true) do |f| %>
+<div class="row2">トラック1</div>
+<%= f.text_field :track_name, placeholder: "Track1", rows: "10" %>
+<div class="row2">音楽ファイル1</div>
+<%= f.file_field :track_file, accept:'audio/mp3' %>
+<%= f.submit "SEND" %>
+<% end %>
+ </div>
+</div>

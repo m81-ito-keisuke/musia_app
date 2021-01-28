@@ -1,0 +1,1262 @@
+
+<!--再生プレイヤー１-->
+<audio src="<%= "#{@tweet.music_file1}" %>#t=0,45" id="sound1">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play1();" id="play"> 
+      <div class="regeneration1"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration1").on("click", function () {
+      $(this).toggleClass("change1");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">1.<%= @tweet.music_title1 %></div>
+    </div>
+    
+<script>
+  var TARGET1 = document.getElementById('sound1');
+  var isPlaying = false;
+
+function play1(){
+  if (isPlaying) {
+  TARGET1.pause()
+  TARGET1.currentTime = 0;
+} else {
+  TARGET1.currentTime = 0;
+  TARGET1.play();
+}
+
+};
+TARGET1.onplaying = function() {
+isPlaying = true;
+};
+TARGET1.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET1.volume) {
+        TARGET1.volume = 1;
+      } else {
+        TARGET1.volume += 0.1;
+      }
+    } else {
+      if (TARGET1.volume < 0.1) {
+        TARGET1.volume = 0;
+      }
+      else {
+        TARGET1.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+<!--再生プレイヤー１終了-->
+
+<!--再生プレイヤー２-->
+<% unless @tweet.music_file2.blank? %>
+<audio src="<%= "#{@tweet.music_file2}" %>#t=0,45" id="sound2">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play2();" id="play"> 
+      <div class="regeneration2"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration2").on("click", function () {
+      $(this).toggleClass("change2");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">2.<%= @tweet.music_title2 %></div>
+    </div>
+    
+<script>
+  var TARGET2 = document.getElementById('sound2');
+  var isPlaying = false;
+
+function play2(){
+  if (isPlaying) {
+  TARGET2.pause()
+  TARGET2.currentTime = 0;
+} else {
+  TARGET2.currentTime = 0;
+  TARGET2.play();
+}
+
+};
+TARGET2.onplaying = function() {
+isPlaying = true;
+};
+TARGET2.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET2.volume) {
+        TARGET2.volume = 1;
+      } else {
+        TARGET2.volume += 0.1;
+      }
+    } else {
+      if (TARGET2.volume < 0.1) {
+        TARGET2.volume = 0;
+      }
+      else {
+        TARGET2.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー2終了-->
+
+<!--再生プレイヤー3-->
+<% unless @tweet.music_file3.blank? %>
+<audio src="<%= "#{@tweet.music_file3}" %>#t=0,45" id="sound3">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play3();" id="play"> 
+      <div class="regeneration3"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration3").on("click", function () {
+      $(this).toggleClass("change3");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">3.<%= @tweet.music_title3 %></div>
+    </div>
+    
+<script>
+  var TARGET3 = document.getElementById('sound3');
+  var isPlaying = false;
+
+function play3(){
+  if (isPlaying) {
+  TARGET3.pause()
+  TARGET3.currentTime = 0;
+} else {
+  TARGET3.currentTime = 0;
+  TARGET3.play();
+}
+
+};
+TARGET3.onplaying = function() {
+isPlaying = true;
+};
+TARGET3.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET3.volume) {
+        TARGET3.volume = 1;
+      } else {
+        TARGET3.volume += 0.1;
+      }
+    } else {
+      if (TARGET3.volume < 0.1) {
+        TARGET3.volume = 0;
+      }
+      else {
+        TARGET3.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー3終了-->
+
+<!--再生プレイヤー4-->
+<% unless @tweet.music_file4.blank? %>
+<audio src="<%= "#{@tweet.music_file4}" %>#t=0,45" id="sound4">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play4();" id="play"> 
+      <div class="regeneration4"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration4").on("click", function () {
+      $(this).toggleClass("change4");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">4.<%= @tweet.music_title4 %></div>
+    </div>
+    
+<script>
+  var TARGET4 = document.getElementById('sound4');
+  var isPlaying = false;
+
+function play4(){
+  if (isPlaying) {
+  TARGET4.pause()
+  TARGET4.currentTime = 0;
+} else {
+  TARGET4.currentTime = 0;
+  TARGET4.play();
+}
+
+};
+TARGET4.onplaying = function() {
+isPlaying = true;
+};
+TARGET4.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET4.volume) {
+        TARGET4.volume = 1;
+      } else {
+        TARGET4.volume += 0.1;
+      }
+    } else {
+      if (TARGET4.volume < 0.1) {
+        TARGET4.volume = 0;
+      }
+      else {
+        TARGET4.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー4終了-->
+
+<!--再生プレイヤー5-->
+<% unless @tweet.music_file5.blank? %>
+<audio src="<%= "#{@tweet.music_file5}" %>#t=0,45" id="sound5">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play5();" id="play"> 
+      <div class="regeneration5"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration5").on("click", function () {
+      $(this).toggleClass("change5");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">5.<%= @tweet.music_title5 %></div>
+    </div>
+    
+<script>
+  var TARGET5 = document.getElementById('sound5');
+  var isPlaying = false;
+
+function play5(){
+  if (isPlaying) {
+  TARGET5.pause()
+  TARGET5.currentTime = 0;
+} else {
+  TARGET5.currentTime = 0;
+  TARGET5.play();
+}
+
+};
+TARGET5.onplaying = function() {
+isPlaying = true;
+};
+TARGET5.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET5.volume) {
+        TARGET5.volume = 1;
+      } else {
+        TARGET5.volume += 0.1;
+      }
+    } else {
+      if (TARGET5.volume < 0.1) {
+        TARGET5.volume = 0;
+      }
+      else {
+        TARGET5.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー5終了-->
+
+<!--repeat-->
+
+<!--再生プレイヤー6-->
+<% unless @tweet.music_file6.blank? %>
+<audio src="<%= "#{@tweet.music_file6}" %>#t=0,45" id="sound6">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play6();" id="play"> 
+      <div class="regeneration6"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration6").on("click", function () {
+      $(this).toggleClass("change6");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">6.<%= @tweet.music_title6 %></div>
+    </div>
+    
+<script>
+  var TARGET6 = document.getElementById('sound6');
+  var isPlaying = false;
+
+function play6(){
+  if (isPlaying) {
+  TARGET6.pause()
+  TARGET6.currentTime = 0;
+} else {
+  TARGET6.currentTime = 0;
+  TARGET6.play();
+}
+
+};
+TARGET6.onplaying = function() {
+isPlaying = true;
+};
+TARGET6.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET6.volume) {
+        TARGET6.volume = 1;
+      } else {
+        TARGET6.volume += 0.1;
+      }
+    } else {
+      if (TARGET6.volume < 0.1) {
+        TARGET6.volume = 0;
+      }
+      else {
+        TARGET6.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+   <% end %>
+<!--再生プレイヤー6終了-->
+
+<!--再生プレイヤー7-->
+<% unless @tweet.music_file7.blank? %>
+<audio src="<%= "#{@tweet.music_file7}" %>#t=0,45" id="sound7">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play7();" id="play"> 
+      <div class="regeneration7"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration7").on("click", function () {
+      $(this).toggleClass("change7");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">7.<%= @tweet.music_title7 %></div>
+    </div>
+    
+<script>
+  var TARGET7 = document.getElementById('sound7');
+  var isPlaying = false;
+
+function play7(){
+  if (isPlaying) {
+  TARGET7.pause()
+  TARGET7.currentTime = 0;
+} else {
+  TARGET7.currentTime = 0;
+  TARGET7.play();
+}
+
+};
+TARGET7.onplaying = function() {
+isPlaying = true;
+};
+TARGET7.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET7.volume) {
+        TARGET7.volume = 1;
+      } else {
+        TARGET7.volume += 0.1;
+      }
+    } else {
+      if (TARGET7.volume < 0.1) {
+        TARGET7.volume = 0;
+      }
+      else {
+        TARGET7.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー7終了-->
+
+<!--再生プレイヤー8-->
+<% unless @tweet.music_file8.blank? %>
+<audio src="<%= "#{@tweet.music_file8}" %>#t=0,45" id="sound8">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play8();" id="play"> 
+      <div class="regeneration8"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration8").on("click", function () {
+      $(this).toggleClass("change8");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">8.<%= @tweet.music_title8 %></div>
+    </div>
+    
+<script>
+  var TARGET8 = document.getElementById('sound8');
+  var isPlaying = false;
+
+function play8(){
+  if (isPlaying) {
+  TARGET8.pause()
+  TARGET8.currentTime = 0;
+} else {
+  TARGET8.currentTime = 0;
+  TARGET8.play();
+}
+
+};
+TARGET8.onplaying = function() {
+isPlaying = true;
+};
+TARGET8.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET8.volume) {
+        TARGET8.volume = 1;
+      } else {
+        TARGET8.volume += 0.1;
+      }
+    } else {
+      if (TARGET8.volume < 0.1) {
+        TARGET8.volume = 0;
+      }
+      else {
+        TARGET8.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー8終了-->
+
+<!--再生プレイヤー9-->
+<% unless @tweet.music_file9.blank? %>
+<audio src="<%= "#{@tweet.music_file9}" %>#t=0,45" id="sound9">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play9();" id="play"> 
+      <div class="regeneration9"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration9").on("click", function () {
+      $(this).toggleClass("change9");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">9.<%= @tweet.music_title9 %></div>
+    </div>
+    
+<script>
+  var TARGET9 = document.getElementById('sound9');
+  var isPlaying = false;
+
+function play9(){
+  if (isPlaying) {
+  TARGET9.pause()
+  TARGET9.currentTime = 0;
+} else {
+  TARGET9.currentTime = 0;
+  TARGET9.play();
+}
+
+};
+TARGET9.onplaying = function() {
+isPlaying = true;
+};
+TARGET9.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET9.volume) {
+        TARGET9.volume = 1;
+      } else {
+        TARGET9.volume += 0.1;
+      }
+    } else {
+      if (TARGET9.volume < 0.1) {
+        TARGET9.volume = 0;
+      }
+      else {
+        TARGET9.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー9終了-->
+
+<!--再生プレイヤー10-->
+<% unless @tweet.music_file10.blank? %>
+<audio src="<%= "#{@tweet.music_file10}" %>#t=0,45" id="sound10">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play10();" id="play"> 
+      <div class="regeneration10"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration10").on("click", function () {
+      $(this).toggleClass("change10");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">10.<%= @tweet.music_title10 %></div>
+    </div>
+    
+<script>
+  var TARGET10 = document.getElementById('sound10');
+  var isPlaying = false;
+
+function play10(){
+  if (isPlaying) {
+  TARGET10.pause()
+  TARGET10.currentTime = 0;
+} else {
+  TARGET10.currentTime = 0;
+  TARGET10.play();
+}
+
+};
+TARGET10.onplaying = function() {
+isPlaying = true;
+};
+TARGET10.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET10.volume) {
+        TARGET10.volume = 1;
+      } else {
+        TARGET10.volume += 0.1;
+      }
+    } else {
+      if (TARGET10.volume < 0.1) {
+        TARGET10.volume = 0;
+      }
+      else {
+        TARGET10.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー10終了-->
+
+<!--再生プレイヤー11-->
+<% unless @tweet.music_file11.blank? %>
+<audio src="<%= "#{@tweet.music_file11}" %>#t=0,45" id="sound11">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play11();" id="play"> 
+      <div class="regeneration11"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration11").on("click", function () {
+      $(this).toggleClass("change11");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">11.<%= @tweet.music_title11 %></div>
+    </div>
+    
+<script>
+  var TARGET11 = document.getElementById('sound11');
+  var isPlaying = false;
+
+function play11(){
+  if (isPlaying) {
+  TARGET11.pause()
+  TARGET11.currentTime = 0;
+} else {
+  TARGET11.currentTime = 0;
+  TARGET11.play();
+}
+
+};
+TARGET11.onplaying = function() {
+isPlaying = true;
+};
+TARGET11.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET11.volume) {
+        TARGET11.volume = 1;
+      } else {
+        TARGET11.volume += 0.1;
+      }
+    } else {
+      if (TARGET11.volume < 0.1) {
+        TARGET11.volume = 0;
+      }
+      else {
+        TARGET11.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+   <% end %>
+<!--再生プレイヤー11終了-->
+
+<!--再生プレイヤー12-->
+<% unless @tweet.music_file12.blank? %>
+<audio src="<%= "#{@tweet.music_file12}" %>#t=0,45" id="sound12">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play12();" id="play"> 
+      <div class="regeneration12"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration12").on("click", function () {
+      $(this).toggleClass("change12");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">12.<%= @tweet.music_title12 %></div>
+    </div>
+    
+<script>
+  var TARGET12 = document.getElementById('sound12');
+  var isPlaying = false;
+
+function play12(){
+  if (isPlaying) {
+  TARGET12.pause()
+  TARGET12.currentTime = 0;
+} else {
+  TARGET12.currentTime = 0;
+  TARGET12.play();
+}
+
+};
+TARGET12.onplaying = function() {
+isPlaying = true;
+};
+TARGET12.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET12.volume) {
+        TARGET12.volume = 1;
+      } else {
+        TARGET12.volume += 0.1;
+      }
+    } else {
+      if (TARGET12.volume < 0.1) {
+        TARGET12.volume = 0;
+      }
+      else {
+        TARGET12.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー12終了-->
+
+<!--再生プレイヤー13-->
+<% unless @tweet.music_file13.blank? %>
+<audio src="<%= "#{@tweet.music_file13}" %>#t=0,45" id="sound13">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play13();" id="play"> 
+      <div class="regeneration13"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration13").on("click", function () {
+      $(this).toggleClass("change13");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">13.<%= @tweet.music_title13 %></div>
+    </div>
+    
+<script>
+  var TARGET13 = document.getElementById('sound13');
+  var isPlaying = false;
+
+function play13(){
+  if (isPlaying) {
+  TARGET13.pause()
+  TARGET13.currentTime = 0;
+} else {
+  TARGET13.currentTime = 0;
+  TARGET13.play();
+}
+
+};
+TARGET13.onplaying = function() {
+isPlaying = true;
+};
+TARGET13.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET13.volume) {
+        TARGET13.volume = 1;
+      } else {
+        TARGET13.volume += 0.1;
+      }
+    } else {
+      if (TARGET13.volume < 0.1) {
+        TARGET13.volume = 0;
+      }
+      else {
+        TARGET13.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー13終了-->
+
+<!--再生プレイヤー14-->
+<% unless @tweet.music_file14.blank? %>
+<audio src="<%= "#{@tweet.music_file14}" %>#t=0,45" id="sound14">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play14();" id="play"> 
+      <div class="regeneration14"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration14").on("click", function () {
+      $(this).toggleClass("change14");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">14.<%= @tweet.music_title14 %></div>
+    </div>
+    
+<script>
+  var TARGET14 = document.getElementById('sound14');
+  var isPlaying = false;
+
+function play14(){
+  if (isPlaying) {
+  TARGET14.pause()
+  TARGET14.currentTime = 0;
+} else {
+  TARGET14.currentTime = 0;
+  TARGET14.play();
+}
+
+};
+TARGET14.onplaying = function() {
+isPlaying = true;
+};
+TARGET14.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET14.volume) {
+        TARGET14.volume = 1;
+      } else {
+        TARGET14.volume += 0.1;
+      }
+    } else {
+      if (TARGET14.volume < 0.1) {
+        TARGET14.volume = 0;
+      }
+      else {
+        TARGET14.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー14終了-->
+
+<!--再生プレイヤー15-->
+<% unless @tweet.music_file15.blank? %>
+<audio src="<%= "#{@tweet.music_file15}" %>#t=0,45" id="sound15">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play15();" id="play"> 
+      <div class="regeneration15"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration15").on("click", function () {
+      $(this).toggleClass("change15");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">15.<%= @tweet.music_title15 %></div>
+    </div>
+    
+<script>
+  var TARGET15 = document.getElementById('sound15');
+  var isPlaying = false;
+
+function play15(){
+  if (isPlaying) {
+  TARGET15.pause()
+  TARGET15.currentTime = 0;
+} else {
+  TARGET15.currentTime = 0;
+  TARGET15.play();
+}
+
+};
+TARGET15.onplaying = function() {
+isPlaying = true;
+};
+TARGET15.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET15.volume) {
+        TARGET15.volume = 1;
+      } else {
+        TARGET15.volume += 0.1;
+      }
+    } else {
+      if (TARGET15.volume < 0.1) {
+        TARGET15.volume = 0;
+      }
+      else {
+        TARGET15.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー15終了-->
+
+<!--再生プレイヤー16-->
+<% unless @tweet.music_file16.blank? %>
+<audio src="<%= "#{@tweet.music_file16}" %>#t=0,45" id="sound16">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play16();" id="play"> 
+      <div class="regeneration16"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration16").on("click", function () {
+      $(this).toggleClass("change16");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">16.<%= @tweet.music_title16 %></div>
+    </div>
+    
+<script>
+  var TARGET16 = document.getElementById('sound16');
+  var isPlaying = false;
+
+function play16(){
+  if (isPlaying) {
+  TARGET16.pause()
+  TARGET16.currentTime = 0;
+} else {
+  TARGET16.currentTime = 0;
+  TARGET16.play();
+}
+
+};
+TARGET16.onplaying = function() {
+isPlaying = true;
+};
+TARGET16.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET16.volume) {
+        TARGET16.volume = 1;
+      } else {
+        TARGET16.volume += 0.1;
+      }
+    } else {
+      if (TARGET16.volume < 0.1) {
+        TARGET16.volume = 0;
+      }
+      else {
+        TARGET16.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー16終了-->
+
+<!--再生プレイヤー17-->
+<% unless @tweet.music_file17.blank? %>
+<audio src="<%= "#{@tweet.music_file17}" %>#t=0,45" id="sound17">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play17();" id="play"> 
+      <div class="regeneration17"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration17").on("click", function () {
+      $(this).toggleClass("change17");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">17.<%= @tweet.music_title17 %></div>
+    </div>
+    
+<script>
+  var TARGET17 = document.getElementById('sound17');
+  var isPlaying = false;
+
+function play17(){
+  if (isPlaying) {
+  TARGET17.pause()
+  TARGET17.currentTime = 0;
+} else {
+  TARGET17.currentTime = 0;
+  TARGET17.play();
+}
+
+};
+TARGET17.onplaying = function() {
+isPlaying = true;
+};
+TARGET17.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET17.volume) {
+        TARGET17.volume = 1;
+      } else {
+        TARGET17.volume += 0.1;
+      }
+    } else {
+      if (TARGET17.volume < 0.1) {
+        TARGET17.volume = 0;
+      }
+      else {
+        TARGET17.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー17終了-->
+
+<!--再生プレイヤー18-->
+<% unless @tweet.music_file18.blank? %>
+<audio src="<%= "#{@tweet.music_file18}" %>#t=0,45" id="sound18">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play18();" id="play"> 
+      <div class="regeneration18"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration18").on("click", function () {
+      $(this).toggleClass("change18");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">18.<%= @tweet.music_title18 %></div>
+    </div>
+    
+<script>
+  var TARGET18 = document.getElementById('sound18');
+  var isPlaying = false;
+
+function play18(){
+  if (isPlaying) {
+  TARGET18.pause()
+  TARGET18.currentTime = 0;
+} else {
+  TARGET18.currentTime = 0;
+  TARGET18.play();
+}
+
+};
+TARGET18.onplaying = function() {
+isPlaying = true;
+};
+TARGET18.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET18.volume) {
+        TARGET18.volume = 1;
+      } else {
+        TARGET18.volume += 0.1;
+      }
+    } else {
+      if (TARGET18.volume < 0.1) {
+        TARGET18.volume = 0;
+      }
+      else {
+        TARGET18.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー18終了-->
+
+<!--再生プレイヤー19-->
+<% unless @tweet.music_file19.blank? %>
+<audio src="<%= "#{@tweet.music_file19}" %>#t=0,45" id="sound19">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play19();" id="play"> 
+      <div class="regeneration19"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration19").on("click", function () {
+      $(this).toggleClass("change19");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">19.<%= @tweet.music_title19 %></div>
+    </div>
+    
+<script>
+  var TARGET19 = document.getElementById('sound19');
+  var isPlaying = false;
+
+function play19(){
+  if (isPlaying) {
+  TARGET19.pause()
+  TARGET19.currentTime = 0;
+} else {
+  TARGET19.currentTime = 0;
+  TARGET19.play();
+}
+
+};
+TARGET19.onplaying = function() {
+isPlaying = true;
+};
+TARGET19.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET19.volume) {
+        TARGET19.volume = 1;
+      } else {
+        TARGET19.volume += 0.1;
+      }
+    } else {
+      if (TARGET19.volume < 0.1) {
+        TARGET19.volume = 0;
+      }
+      else {
+        TARGET19.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー19終了-->
+
+<!--再生プレイヤー20-->
+<% unless @tweet.music_file20.blank? %>
+<audio src="<%= "#{@tweet.music_file20}" %>#t=0,45" id="sound20">
+  <p>HTML5に対応していません。</p>
+  </audio>
+
+<div class="original_player">
+    <div class="player1">
+      <a onclick="play20();" id="play"> 
+      <div class="regeneration20"></div>
+      </a></div>
+        
+        <script type="text/javascript">
+    $(".regeneration20").on("click", function () {
+      $(this).toggleClass("change20");
+    });
+    </script>
+      <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+      <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+      <div class="player4">20.<%= @tweet.music_title20 %></div>
+    </div>
+    
+<script>
+  var TARGET20 = document.getElementById('sound20');
+  var isPlaying = false;
+
+function play20(){
+  if (isPlaying) {
+  TARGET20.pause()
+  TARGET20.currentTime = 0;
+} else {
+  TARGET20.currentTime = 0;
+  TARGET20.play();
+}
+
+};
+TARGET20.onplaying = function() {
+isPlaying = true;
+};
+TARGET20.onpause = function() {
+isPlaying = false;
+}; 
+
+function Volume(flag) {
+    if (0 < flag) {
+      if (0.9 < TARGET20.volume) {
+        TARGET20.volume = 1;
+      } else {
+        TARGET20.volume += 0.1;
+      }
+    } else {
+      if (TARGET20.volume < 0.1) {
+        TARGET20.volume = 0;
+      }
+      else {
+        TARGET20.volume -= 0.1;
+      }
+    }
+  }
+  </script>
+  <% end %>
+<!--再生プレイヤー20終了-->
+
+-->
