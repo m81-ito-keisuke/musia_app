@@ -1168,14 +1168,14 @@ h2{
   display: none
 }
 
-.regeneration1, .regeneration2, .regeneration3, .regeneration4, .regeneration5, .regeneration6, .regeneration7, .regeneration8, .regeneration9, .regeneration10, .regeneration11, .regeneration12, .regeneration13, .regeneration14, .regeneration15, .regeneration16, .regeneration17, .regeneration18, .regeneration19, .regeneration20 {
+.regeneration {
   width: 34px;
   height:34px;
   background-size:34px 34px;
   background-image: url("regeneration.png");
 }
 
-.change1, .change2, .change3, .change4, .change5, .change6, .change7, .change8, .change9, .change10, .change11, .change12, .change13, .change14, .change15, .change16, .change17, .change18, .change19, .change20 {
+.change {
   background-image: url("stop.png");
   
 }
@@ -1193,7 +1193,7 @@ h2{
 .player1{
   position: absolute;
   cursor: pointer;
-  right: 18px;
+  right: 18.5px;
   border: 2px solid blue;
 }
 

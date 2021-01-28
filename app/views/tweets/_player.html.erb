@@ -1,0 +1,66 @@
+
+<!--再生プレイヤー-->
+<% unless @track.blank? %>
+  <% @tracks.each do |track| %>
+  <audio src="<%= "#{track.track_file}" %>#t=0,45" id="sound">
+    <p>HTML5に対応していません。</p>
+    </audio>
+
+  <div class="original_player">
+      <div class="player1">
+        <a onclick="play();" id="play"> 
+        <div class="regeneration"></div>
+        </a></div>
+          
+      <script type="text/javascript">
+      $(".regeneration").on("click", function () {
+        $(this).toggleClass("change");
+      });
+      </script>
+    <div class="player2"><a onclick="Volume(1);">⌃</a></div>
+    <div class="player3"><a onclick="Volume(-1);">⌄</a></div>
+    <div class="player4">1.<%= track.track_name %></div>
+  </div>
+    
+  <script>
+    var TARGET = document.getElementById('sound');
+    var isPlaying = false;
+
+  function play(){
+    if (isPlaying) {
+    TARGET.pause()
+    TARGET.currentTime = 0;
+  } else {
+    TARGET.currentTime = 0;
+    TARGET.play();
+  }
+
+  };
+  TARGET.onplaying = function() {
+  isPlaying = true;
+  };
+  TARGET.onpause = function() {
+  isPlaying = false;
+  }; 
+
+  function Volume(flag) {
+      if (0 < flag) {
+        if (0.9 < TARGET.volume) {
+          TARGET.volume = 1;
+        } else {
+          TARGET.volume += 0.1;
+        }
+      } else {
+        if (TARGET.volume < 0.1) {
+          TARGET.volume = 0;
+        }
+        else {
+          TARGET.volume -= 0.1;
+        }
+      }
+    }
+    </script>
+   <% end %>
+<% end %>
+<!--再生プレイヤー終了-->
+

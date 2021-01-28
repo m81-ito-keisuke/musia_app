@@ -37,6 +37,8 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @track = Track.new
+    @tracks = @tweet.tracks.includes(:user)
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
   end
