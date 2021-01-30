@@ -662,6 +662,7 @@ body {
   color: #666;
   font-family: 'Courier';
   margin: 0;
+  text-align: center;
 }
 
 a {
@@ -708,7 +709,7 @@ form input[type="submit"] {
   -moz-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
+  transition-timing-function: linear; 
 }
 
 .btn,

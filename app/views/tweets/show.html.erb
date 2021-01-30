@@ -23,10 +23,10 @@
   </div>
 
    <% if @tweet.tracks.blank? %>
-    <div class="info_show5"><%= link_to 'Music Upload', new_tweet_track_path(@tweet.id), method: :get %></div>
+    <div class="info_show5"><%= link_to 'Track Upload', new_tweet_track_path(@tweet.id), method: :get %></div>
     <% end %>
   <% @tweet.tracks.each do |track| %>
-     <div class="info_show5"><%= link_to 'Music Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></div>
+     <div class="info_show5"><%= link_to 'Track Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></div>
    <% end %>
     <% @tweet.tracks.each do |track| %>
     <%= render partial: "player", locals: { track: track } %>
@@ -39,7 +39,7 @@
         <%= form.submit "SEND" %>
       <% end %>
     <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <strong><p>Please sign up / Sign in</p></strong>
     <% end %>
        <div class="comments">
       <h4>☆Comment List☆</h4>
@@ -48,7 +48,6 @@
           <div class="comment_word1">
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>
             <td>  <%= l comment.created_at, format: :short %></td></strong>
-            
           </div>
           <div class="comment_word2">
           <%= comment.text %>

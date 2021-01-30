@@ -5,7 +5,7 @@ class Track < ApplicationRecord
   with_options presence: true do
     validates :track_name1
     validates :track_file1
-    end
+  end
 
   mount_uploader :track_file1, AudiofileUploader
   mount_uploader :track_file2, AudiofileUploader
