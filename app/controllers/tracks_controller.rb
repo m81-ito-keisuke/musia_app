@@ -1,13 +1,15 @@
 class TracksController < ApplicationController
-  before_action :move_to_root_path, except: [:index, :show]
+  before_action :puts_tweet, only: [:new, :create, :edit, :update]
+  before_action :move_to_root_path, only: [:new, :create, :edit, :update]
 
   def new
-    @tweet = Tweet.find(params[:tweet_id])
     @track = Track.new
+    unless @tweet.tracks.blank?
+      redirect_to root_path
+    end
   end
 
   def create
-    @tweet = Tweet.find(params[:tweet_id])
     @track = Track.new(track_params)
     if @track.save
       render :create
@@ -17,12 +19,11 @@ class TracksController < ApplicationController
   end
 
   def edit
-    @tweet = Tweet.find(params[:tweet_id])
     @track = Track.find(params[:id])
+    
   end
 
   def update
-    @tweet = Tweet.find(params[:tweet_id])
     track = Track.find(params[:id])
     track.update(track_params)
   end
@@ -34,8 +35,13 @@ class TracksController < ApplicationController
       user_id: current_user.id, tweet_id: params[:tweet_id])
   end
 
-  def move_to_root_path
-    redirect_to root_path unless user_signed_in?
+  def puts_tweet
+    @tweet = Tweet.find(params[:tweet_id])
   end
 
+  def move_to_root_path
+    unless user_signed_in? && current_user.id == @tweet.user_id
+      redirect_to root_path
+    end
+  end
 end

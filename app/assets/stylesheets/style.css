@@ -1162,6 +1162,7 @@ h2{
   font-size: 16px;
   border: 2px solid #57C3E9;
   margin: 10px 65px 0 65px;
+  border-radius: 3px;
 }
 
 .info_show5{
@@ -1171,6 +1172,7 @@ h2{
   font-weight: bold;
   margin: 15px;
   padding: 8px;
+  border-radius: 3px;
 }
 
 .audio_file{
@@ -1204,6 +1206,7 @@ h2{
   border: 2px solid blue;
   display: flex;
   align-items: center;
+  border-radius: 3px;
 }
 
 .player1{

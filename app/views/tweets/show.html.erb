@@ -22,12 +22,16 @@
     </div>
   </div>
 
-   <% if @tweet.tracks.blank? %>
+   <% if @tweet.tracks.blank? && user_signed_in? && current_user.id == @tweet.user_id %>
     <div class="info_show5"><%= link_to 'Track Upload', new_tweet_track_path(@tweet.id), method: :get %></div>
     <% end %>
+
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
   <% @tweet.tracks.each do |track| %>
      <div class="info_show5"><%= link_to 'Track Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></div>
+       <% end %>
    <% end %>
+
     <% @tweet.tracks.each do |track| %>
     <%= render partial: "player", locals: { track: track } %>
 <% end %>
