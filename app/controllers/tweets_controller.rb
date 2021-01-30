@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
   end
-
+  
   def show
     @track = Track.new
     @tracks = @tweet.tracks.includes(:user)

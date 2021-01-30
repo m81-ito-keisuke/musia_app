@@ -18,13 +18,20 @@
     <div class="info_show1"><%= @tweet.title %></div>
     <div class="info_show1"><%= @tweet.artist_name %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @tweet.user.id %>"><%= @tweet.user.nickname %></a></div>
-    <div class="info_show4"><%= @tweet.price %>円</div>
-    <div class="info_show4"><%= link_to 'Music Upload', new_tweet_track_path(@tweet.id) %></div>
+    <div class="info_show4"><%= @tweet.price %>円</div>  
+    <% if @tweet.tracks.blank? %>
+    <div class="info_show4"><%= link_to 'Music Upload', new_tweet_track_path(@tweet.id), method: :get %></div>
+    <% end %>
+  <% @tweet.tracks.each do |track| %>
+     <div class="info_show4"><%= link_to 'Music Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></div>
+   <% end %>
     </div>
   </div>
 
-  <%= render partial: "player", locals: { track: @track } %>
-  
+    <% @tweet.tracks.each do |track| %>
+    <%= render partial: "player", locals: { track: track } %>
+<% end %>
+
   <div class="container2">
     <% if current_user %>
       <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
