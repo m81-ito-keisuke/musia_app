@@ -3,8 +3,8 @@ class CreateTracks < ActiveRecord::Migration[6.0]
     create_table :tracks do |t|
       t.integer :user_id,         null: false, foreign_key: true
       t.integer :tweet_id,        null: false, foreign_key: true
-      t.string  :track_name1,     null: false, foreign_key: true
-      t.string  :track_file1,     null: false, foreign_key: true
+      t.string  :track_name1,     null: false
+      t.string  :track_file1,     null: false
       t.string  :track_name2
       t.string  :track_file2
       t.string  :track_name3
