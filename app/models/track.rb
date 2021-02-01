@@ -28,4 +28,14 @@ class Track < ApplicationRecord
   mount_uploader :track_file19, AudiofileUploader
   mount_uploader :track_file20, AudiofileUploader
 
+  validate :audio_content_type
+
+  def audio_content_type
+    extension = ['audio/wav', 'audio/mpeg']
+    errors.add(:track_file1, 'の拡張子が間違っています') unless track_file1.content_type.in?(extension)
+  end
+
+  def was_attached?
+    track_file1.attached?
+  end
 end

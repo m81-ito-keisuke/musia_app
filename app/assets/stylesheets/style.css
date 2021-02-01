@@ -1170,9 +1170,15 @@ h2{
   border: 2px solid red;
   font-family: 'Roboto','Noto Sans JP',sans-serif;
   font-weight: bold;
-  margin: 15px;
-  padding: 8px;
+  margin: 27px 8px 15px 8px;
+  padding: 4px 0;
   border-radius: 3px;
+  width:100px;
+}
+
+.track_action{
+  display: flex;
+  align-items: center;
 }
 
 .audio_file{
@@ -1207,6 +1213,7 @@ h2{
   display: flex;
   align-items: center;
   border-radius: 3px;
+  top: 10px;
 }
 
 .player1{

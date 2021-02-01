@@ -26,15 +26,18 @@
     <div class="info_show5"><%= link_to 'Track Upload', new_tweet_track_path(@tweet.id), method: :get %></div>
     <% end %>
 
-    <% if user_signed_in? && current_user.id == @tweet.user_id %>
-  <% @tweet.tracks.each do |track| %>
-     <div class="info_show5"><%= link_to 'Track Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></div>
-       <% end %>
-   <% end %>
-
     <% @tweet.tracks.each do |track| %>
     <%= render partial: "player", locals: { track: track } %>
 <% end %>
+
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
+  <% @tweet.tracks.each do |track| %>
+  <ul class="track_action">
+     <li class="info_show5"><%= link_to 'Track Edit', edit_tweet_track_path(@tweet.id, track.id), method: :get %></li>
+     <li class="info_show5"><%= link_to 'Track Delete', tweet_track_path(@tweet.id, track.id), method: :delete %></li>
+     </ul>
+       <% end %>
+   <% end %>
 
   <div class="container2">
     <% if current_user %>

@@ -28,6 +28,12 @@ class TracksController < ApplicationController
     track.update(track_params)
   end
 
+  def destroy
+    track = Track.find(params[:id])
+    track.destroy
+    redirect_to tweet_path(track.tweet.id)
+  end
+
   private
 
   def track_params
