@@ -27,4 +27,5 @@ class Track < ApplicationRecord
   mount_uploader :track_file18, AudiofileUploader
   mount_uploader :track_file19, AudiofileUploader
   mount_uploader :track_file20, AudiofileUploader
+
 end

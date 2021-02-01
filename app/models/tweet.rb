@@ -2,7 +2,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many :tracks, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_one_attached :image
+  has_one_attached :image, dependent: :destroy
 
   with_options presence: true do
     validates :title
@@ -14,6 +14,8 @@ class Tweet < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :cd_type
+
+  validate :image_content_type
 
   def image_content_type
     extension = ['image/png', 'image/jpg', 'image/jpeg']
