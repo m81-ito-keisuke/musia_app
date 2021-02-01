@@ -51,11 +51,14 @@
         <% @comments.each do |comment| %>
           <div class="comment_word1">
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>
-            <td>  <%= l comment.created_at, format: :short %></td></strong>
+            <td>  <%= l comment.created_at, format: :short %></td>
+            <% if user_signed_in? && current_user.id == @tweet.user_id %>
+            <%= link_to 'DELETE', tweet_comment_path(comment.id), method: :delete %>
+            <% end %></strong>
           </div>
           <div class="comment_word2">
           <%= comment.text %>
-          </div>
+          </div>  
         <% end %>
       <% end %>
     </div>

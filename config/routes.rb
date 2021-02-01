@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
   resources :tweets do
     resources :tracks, only: [:new, :create, :edit, :update]
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
       end

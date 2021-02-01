@@ -1,7 +1,14 @@
 class CommentsController < ApplicationController
+
   def create
     comment = Comment.create(comment_params)
-    redirect_to "/tweets/#{comment.tweet.id}"
+    redirect_to tweet_path(comment.tweet.id)
+  end
+
+  def destroy
+    comment = Comment.find(params[:tweet_id])
+    comment.destroy
+    redirect_to tweet_path(comment.tweet.id)
   end
 
   private
