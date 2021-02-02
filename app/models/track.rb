@@ -32,10 +32,6 @@ class Track < ApplicationRecord
 
   def audio_content_type
     extension = ['audio/wav', 'audio/mpeg']
-    errors.add(:track_file1, 'の拡張子が間違っています') unless track_file1.content_type.in?(extension)
-  end
-
-  def was_attached?
-    track_file1.attached?
+    errors.add(:track_file1, '拡張子が間違っています') unless track_file1.content_type.in?(extension)
   end
 end
