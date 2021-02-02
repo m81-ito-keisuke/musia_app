@@ -1,12 +1,12 @@
       <%# form.text_field :image, placeholder: "Image Url" %>
-　　　<div class="row2">ジャケット写真</div>
+　　　<div class="row2">Jacket Image</div>
       <%= form.file_field :image, id:"music_image", accept:"image/*" %>
-       <div class="row2">アーティスト名</div>
+       <div class="row2">Artist Name</div>
       <%= form.text_field :artist_name, placeholder: "Artist Name", rows: "10" %>
-      <div class="row2">CDタイトル</div>
-      <%= form.text_field :title, placeholder: "Album Title", rows: "10" %>
-      <div class="row2">CD種別</div>
+      <div class="row2">CD Title</div>
+      <%= form.text_field :title, placeholder: "CD Title", rows: "10" %>
+      <div class="row2">CD Type</div>
        <%= form.collection_select(:cd_type_id, CdType.all, :id, :name, {}, {class:"cd_type-select"}) %>
-      <div class="row2">販売価格</div>
-      <%= form.text_field :price, placeholder: "Price", rows: "10" %>
-      <%= form.submit "SEND" %>
+      <div class="row2">Selling Price</div>
+      <%= form.text_field :price, placeholder: "Selling Price", rows: "10" %>
+      <br><%= form.submit "SEND" %>

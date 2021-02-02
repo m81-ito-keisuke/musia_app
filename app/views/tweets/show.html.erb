@@ -56,7 +56,7 @@
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>
             <td>  <%= l comment.created_at, format: :short %></td>
             <% if user_signed_in? && current_user.id == @tweet.user_id %>
-            <%= link_to 'DELETE', tweet_comment_path(comment.id), method: :delete %>
+            <%= link_to 'DELETE', tweet_comment_path(comment.id), method: :delete, class: "comment_delete" %>
             <% end %></strong>
           </div>
           <div class="comment_word2">
