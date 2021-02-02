@@ -71,8 +71,26 @@ class Track < ApplicationRecord
   def audio_content_type
     extension = ['audio/wav', 'audio/mpeg']
     errors.add(:track_file1, '拡張子が間違っています') unless track_file1.content_type.in?(extension)
+    errors.add(:track_file2, '拡張子が間違っています') unless track_file2.content_type.in?(extension)
+    errors.add(:track_file3, '拡張子が間違っています') unless track_file3.content_type.in?(extension)
+    errors.add(:track_file4, '拡張子が間違っています') unless track_file4.content_type.in?(extension)
+    errors.add(:track_file5, '拡張子が間違っています') unless track_file5.content_type.in?(extension)
+    errors.add(:track_file6, '拡張子が間違っています') unless track_file6.content_type.in?(extension)
+    errors.add(:track_file7, '拡張子が間違っています') unless track_file7.content_type.in?(extension)
+    errors.add(:track_file8, '拡張子が間違っています') unless track_file8.content_type.in?(extension)
+    errors.add(:track_file9, '拡張子が間違っています') unless track_file9.content_type.in?(extension)
+    errors.add(:track_file10, '拡張子が間違っています') unless track_file10.content_type.in?(extension)
+    errors.add(:track_file11, '拡張子が間違っています') unless track_file11.content_type.in?(extension)
+    errors.add(:track_file12, '拡張子が間違っています') unless track_file12.content_type.in?(extension)
+    errors.add(:track_file13, '拡張子が間違っています') unless track_file13.content_type.in?(extension)
+    errors.add(:track_file14, '拡張子が間違っています') unless track_file14.content_type.in?(extension)
+    errors.add(:track_file15, '拡張子が間違っています') unless track_file15.content_type.in?(extension)
+    errors.add(:track_file16, '拡張子が間違っています') unless track_file16.content_type.in?(extension)
+    errors.add(:track_file17, '拡張子が間違っています') unless track_file17.content_type.in?(extension)
+    errors.add(:track_file18, '拡張子が間違っています') unless track_file18.content_type.in?(extension)
+    errors.add(:track_file19, '拡張子が間違っています') unless track_file19.content_type.in?(extension)
+    errors.add(:track_file20, '拡張子が間違っています') unless track_file20.content_type.in?(extension)
   end
-
 
   
 end
