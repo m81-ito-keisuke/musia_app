@@ -1,0 +1,9 @@
+<div class="contents row row4">
+  <div class="container">
+<%= form_with(model: [@music, @track], local: true) do |f| %>
+<h3>Edit Tracks</h3>
+<%= render partial: "track_form", locals: { f: f } %>
+ </div>
+</div>
+<% end %>
+

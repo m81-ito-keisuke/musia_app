@@ -1,0 +1,24 @@
+ <div class="content_post" style="background-image: url(<%= music.image %>);" >
+ <%= link_to image_tag(music.image.variant(resize:'240x240')),music_path(music.id), class: 'music-image' if music.image.attached? %>
+ <% link_to 'リンク', music_path(music.id), method: :get %>
+  <div class="info">
+  <div class="info_show2">
+    <%= music.cd_type.name %>
+  </div>
+    <div class="info_show1">
+    <% if music.title.encode("EUC-JP").bytesize > 24 %>
+      <%= music.title.slice(0, 11)... %>
+    <% else %>
+      <%= music.title %>
+    <% end %>
+    </div>
+    <div class="info_show1">
+    <% if music.artist_name.encode("EUC-JP").bytesize > 24 %> 
+      <%= music.artist_name.slice(0, 11)... %>
+    <% else %>
+      <%= music.artist_name %>
+    <% end %></div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= music.user.id %>"><%= music.user.nickname %></a></div>
+    <div class="info_show4"><%= music.price %>円</div>
+  </div>
+</div>

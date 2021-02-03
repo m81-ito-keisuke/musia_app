@@ -1,0 +1,69 @@
+<div class="contents row row3">
+  <div class="content_post" style="background-image: url(<%= @music.image %>);">
+    <div class="more">
+    <%= link_to image_tag(@music.image.variant(resize:'240x240')),rails_blob_path(@music.image), class: 'music_image' if @music.image.attached? %>
+      <% if user_signed_in? && current_user.id == @music.user_id %>
+        <ul class="more_list">
+          <li>
+            <%= link_to 'EDIT', edit_music_path(@music.id), method: :get %>
+          </li>
+          <li>
+            <%= link_to 'DELETE', music_path(@music.id), method: :delete %>
+          </li>
+        </ul>
+    <% end %>
+    </div>
+    <div class="info">
+    <div class="info_show2"><%= @music.cd_type.name %></div>
+    <div class="info_show1"><%= @music.title %></div>
+    <div class="info_show1"><%= @music.artist_name %></div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @music.user.id %>"><%= @music.user.nickname %></a></div>
+    <div class="info_show4">￥<%= @music.price %></div>  
+    </div>
+  </div>
+
+   <% if @music.tracks.blank? && user_signed_in? && current_user.id == @music.user_id %>
+    <div class="info_show5"><%= link_to 'Upload Tracks', new_music_track_path(@music.id), method: :get %></div>
+    <% end %>
+
+    <% @music.tracks.each do |track| %>
+    <%= render partial: "player", locals: { track: track } %>
+<% end %>
+
+    <% if user_signed_in? && current_user.id == @music.user_id %>
+  <% @music.tracks.each do |track| %>
+  <ul class="track_action">
+     <li class="info_show5"><%= link_to 'Edit Tracks', edit_music_track_path(@music.id, track.id), method: :get %></li>
+     <li class="info_show5"><%= link_to 'Delete Tracks', music_track_path(@music.id, track.id), method: :delete %></li>
+     </ul>
+       <% end %>
+   <% end %>
+
+  <div class="container2">
+    <% if current_user %>
+      <%= form_with(model: [@music, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "Let's comment", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>Please sign up / Sign in</p></strong>
+    <% end %>
+       <div class="comments">
+      <h4>☆Comment List☆</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <div class="comment_word1">
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>
+            <td>  <%= l comment.created_at, format: :short %></td>
+            <% if user_signed_in? && current_user.id == @music.user_id %>
+            <%= link_to 'DELETE', music_comment_path(comment.id), method: :delete, class: "comment_delete" %>
+            <% end %></strong>
+          </div>
+          <div class="comment_word2">
+          <%= comment.text %>
+          </div>  
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

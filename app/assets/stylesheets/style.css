@@ -423,7 +423,7 @@ textarea {
 }
 
 select {
-  width: 100%;
+  width: 20%;
 }
 
 i {
@@ -662,6 +662,7 @@ body {
   color: #666;
   font-family: 'Courier';
   margin: 0;
+  text-align: center;
 }
 
 a {
@@ -708,7 +709,7 @@ form input[type="submit"] {
   -moz-transition-timing-function: linear;
   -o-transition-timing-function: linear;
   -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
+  transition-timing-function: linear; 
 }
 
 .btn,
@@ -1004,7 +1005,7 @@ div.contents.row .success h3 {
 
 form input,
 form textarea {
-  width: 100%;
+  width: 75%;
   margin: 5px 0 7px;
   padding: 10px;
   border: 1px solid #D8D8D8;
@@ -1030,8 +1031,8 @@ form input[type="submit"]:hover {
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
-  width: 35%;
-  height:620px;
+  width: 45%;
+  height: 75%;
 }
 
 .container h3 {
@@ -1049,6 +1050,18 @@ form input[type="submit"]:hover {
 
 .comments a {
   color: #57C3E9;
+}
+
+a.comment_delete{
+  color: red;
+  font-size: 13px;
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+a.comment_delete:hover{
+  color: rgb(255, 169, 169);
+  font-size: 13px;
 }
 
 .comments a:hover {
@@ -1114,8 +1127,8 @@ h2{
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
   background-color: white;
   box-sizing: border-box;
-  width: 35%;
-  height:380px;
+  width: 65%;
+  height: 35%;
 }
 
 .image_form{
@@ -1161,4 +1174,119 @@ h2{
   font-size: 16px;
   border: 2px solid #57C3E9;
   margin: 10px 65px 0 65px;
+  border-radius: 3px;
+}
+
+.info_show5{
+  font-size: 16px;
+  border: 2px solid red;
+  font-family: 'Roboto','Noto Sans JP',sans-serif;
+  font-weight: bold;
+  margin: 27px 8px 15px 8px;
+  padding: 4px 0;
+  border-radius: 3px;
+  width:100px;
+}
+
+.track_action{
+  display: flex;
+  align-items: center;
+}
+
+.audio_file{
+  border: 2px solid #57C3E9;
+  display: none
+}
+
+.regeneration1, .regeneration2, .regeneration3, .regeneration4, .regeneration5, 
+.regeneration6, .regeneration7, .regeneration8, .regeneration9, .regeneration10, 
+.regeneration11, .regeneration12, .regeneration13, .regeneration14, .regeneration15, 
+.regeneration16, .regeneration17, .regeneration18, .regeneration19, .regeneration20 {
+  width: 34px;
+  height:34px;
+  background-size:34px 34px;
+  background-image: url("regeneration.png");
+}
+
+.change1,.change2,.change3,.change4,.change5,
+.change6,.change7,.change8,.change9,.change10,
+.change11,.change12,.change13,.change14,.change15,
+.change16,.change17,.change18,.change19,.change20{
+  background-image: url("stop.png");
+  
+}
+
+.original_player{
+  position: relative;
+  width: 500px;
+  height:38px;
+  margin: 6px 0 6px 0;
+  border: 2px solid blue;
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  top: 10px;
+}
+
+.player1{
+  position: absolute;
+  cursor: pointer;
+  right: 18.5px;
+  border: 2px solid blue;
+}
+
+.player2{
+  position: absolute;
+  right: 0px;
+  font-size: 23px;
+  bottom: 39px;
+  height: 0px;
+  z-index: 1;
+  cursor: pointer;
+}
+.player3{
+  position: absolute;
+  right: 0px;
+  bottom: -6px;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.player4{
+  position: absolute;
+  left: 7px;
+  font-weight: bold;
+  color: black;
+  font-size: 16px;
+  font-family: 'Roboto','Noto Sans JP',sans-serif;
+}
+.info_show5 a {
+  color: red;
+}
+
+.info_show5 a:hover {
+  color: orange;
+}
+
+
+.comment_word1{
+  display: flex;
+  text-align: start;
+  word-break: break-word;
+  margin: 0 0 0px 0;
+}
+
+.comment_word2{
+  display: flex;
+  text-align: start;
+  word-break: break-word;
+  margin: 0 0 22px 0;
+}
+
+.essential{
+  color: red;
+}
+
+.optional{
+  color: #57C3E9;
 }
