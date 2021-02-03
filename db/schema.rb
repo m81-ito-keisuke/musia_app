@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2021_01_27_235319) do
   create_table "tracks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "tweet_id", null: false
-    t.string "track_name1", null: false
-    t.string "track_file1", null: false
+    t.string "track_name1"
+    t.string "track_file1"
     t.string "track_name2"
     t.string "track_file2"
     t.string "track_name3"

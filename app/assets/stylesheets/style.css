@@ -1282,3 +1282,11 @@ h2{
   word-break: break-word;
   margin: 0 0 22px 0;
 }
+
+.essential{
+  color: red;
+}
+
+.optional{
+  color: #57C3E9;
+}
