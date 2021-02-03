@@ -1,6 +1,6 @@
 class Track < ApplicationRecord
   belongs_to :user
-  belongs_to :tweet
+  belongs_to :music
 
   with_options presence: true do
     validates :track_name1
@@ -66,7 +66,4 @@ class Track < ApplicationRecord
   mount_uploader :track_file19, AudiofileUploader
   mount_uploader :track_file20, AudiofileUploader
 
-
-
-  
 end
