@@ -2,6 +2,7 @@ class Music < ApplicationRecord
   belongs_to :user
   has_many :tracks, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :favorites
   has_one_attached :image
 
   with_options presence: true do
@@ -24,6 +25,10 @@ class Music < ApplicationRecord
 
   def was_attached?
     self.image.attached?
+  end
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
   end
 
 end

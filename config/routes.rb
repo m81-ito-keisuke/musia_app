@@ -4,11 +4,16 @@ Rails.application.routes.draw do
   root to: 'musics#index'
   resources :musics do
     resources :tracks, only: [:new, :create, :edit, :update, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
       end
     end
-  resources :users, only: :show
+  resources :users do
+  member do
+    get :favorites
+  end
+end
 end
 
