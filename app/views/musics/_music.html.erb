@@ -23,9 +23,10 @@
 
     <% if user_signed_in? && current_user.id != music.user_id %>
         <% if music.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
-            <p><%=link_to music.favorites.count, music_favorites_path(music.id), method: :delete %></p>
+            <p class="favorite_icon"><%=link_to image_tag('favostar_after.png', size: "32x32"), music_favorites_path(music.id), method: :delete %></p>
         <% else %>
-            <p><%=link_to music.favorites.count, music_favorites_path(music.id), method: :post %></p>
+            <p class="favorite_icon"><%=link_to image_tag('favostar_before.png', size: "32x32"), music_favorites_path(music.id), method: :post %></p>
+            <!--music.favorites.count ←お気に入り数の表示 使うときのため-->
         <% end %>
     <% end %>
   </div>

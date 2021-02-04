@@ -1290,3 +1290,8 @@ h2{
 .optional{
   color: #57C3E9;
 }
+
+div.contents.row div.content_post p.favorite_icon{
+  bottom: 1px;
+  left: 25px;
+}

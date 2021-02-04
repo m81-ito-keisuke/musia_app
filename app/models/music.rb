@@ -9,6 +9,7 @@ class Music < ApplicationRecord
     validates :title
     validates :image
     validates :artist_name
+    validates :price
   end
 
   validates :cd_type_id, numericality: { other_than: 1 }
