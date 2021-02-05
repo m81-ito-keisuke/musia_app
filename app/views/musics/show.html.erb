@@ -55,7 +55,7 @@
           <div class="comment_word1">
             <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>
             <td>  <%= l comment.created_at, format: :short %></td>
-            <% if user_signed_in? && current_user.id == @music.user_id %>
+            <% if user_signed_in? && current_user.id == comment.user_id %>
             <%= link_to 'DELETE', music_comment_path(comment.id), method: :delete, class: "comment_delete" %>
             <% end %></strong>
           </div>

@@ -1,0 +1,7 @@
+<p class="index_title" ><%= @nickname %>'s favorites</p>
+<div class="contents row">
+
+<% @favorite_musics.each do |music| %>
+    <%= render partial: "musics/music", locals: { music: music } %>
+  <% end %>
+</div>

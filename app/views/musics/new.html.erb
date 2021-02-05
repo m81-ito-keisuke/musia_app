@@ -2,6 +2,7 @@
   <div class="container">
     <%= form_with(model: @music, local: true) do |form| %>
       <h3>Upload Musics</h3>
+      <%= render 'layouts/error_messages', model: form.object %>
        <%= render partial: "music_form", locals: { form: form } %>
     <% end %>
   </div>
