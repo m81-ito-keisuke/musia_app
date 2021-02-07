@@ -1,0 +1,19 @@
+<p class="index_title" ><%= @user.nickname %>'s followers</p>
+
+<div class="contents row row4">
+  <div class="container">
+<div class="stats">
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    Followers
+</div>
+<% @users.each do |user| %>
+<ul>
+<li>
+  <%= link_to user.nickname, user_path(user), class: "link_following" %>
+  </li>
+</ul>
+<% end %>
+  </div>
+</div>

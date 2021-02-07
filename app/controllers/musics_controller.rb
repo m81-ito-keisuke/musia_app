@@ -38,6 +38,7 @@ class MusicsController < ApplicationController
   end
 
   def show
+    @user = User.new
     @track = Track.new
     @tracks = @music.tracks.includes(:user)
     @comment = Comment.new
@@ -61,5 +62,4 @@ class MusicsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-
 end
