@@ -6,10 +6,11 @@ class Music < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :title
+    validates :title, length: { maximum: 22 } 
     validates :image
-    validates :artist_name
-    validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { only_integer: true, greater_than_or_equal_to: 500, less_than_or_equal_to: 50_000 }
+    validates :artist_name, length: { maximum: 22 } 
+    validates :price, format: { with: /\A[0-9]+\z/ },
+                      numericality: { only_integer: true, greater_than_or_equal_to: 500, less_than_or_equal_to: 50_000 }
   end
 
   validates :cd_type_id, numericality: { other_than: 1 }
@@ -25,11 +26,10 @@ class Music < ApplicationRecord
   end
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
 
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-
 end

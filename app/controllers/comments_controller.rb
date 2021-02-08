@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     comment = Comment.create(comment_params)
     redirect_to music_path(comment.music.id)
