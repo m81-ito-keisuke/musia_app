@@ -1019,6 +1019,7 @@ form input[type="submit"] {
   color: #fff;
   border: 0;
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 form input[type="submit"]:hover {
@@ -1314,3 +1315,10 @@ a.link_following{
   
 }
 
+.sns_login{
+  border: 1px solid blue;
+  width: 25%;
+  margin: 3px;
+  padding: 3px;
+  border-radius: 3px;
+}
