@@ -27,6 +27,10 @@
       <div class="actions">
         <%= f.submit "Log in" %>
       </div>
+      
+      <%= link_to "LogIn By Facebook", user_facebook_omniauth_authorize_path, method: :post, class: "sns_login" %>
+      <%= link_to "LogIn By Google", user_google_oauth2_omniauth_authorize_path, method: :post, class: "sns_login" %>
+      
     <% end %>
   </div>
 </div>
