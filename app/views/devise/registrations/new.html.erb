@@ -36,6 +36,9 @@
         <%= f.submit "Sign up" %>
       </div>
 
+      <%= link_to "Sign Up By Facebook", user_facebook_omniauth_authorize_path, method: :post, class: "sns_login" %>
+      <%= link_to "Sigh Up By Google", user_google_oauth2_omniauth_authorize_path, method: :post, class: "sns_login" %>
+
     <% end %>
   </div>
 </div>
