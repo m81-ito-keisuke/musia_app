@@ -1,0 +1,18 @@
+<div class="contents row row4">
+  <div class="container">
+<h3>Credit Card</h3>
+
+<%= form_with(model: @order, url: new_music_order_path, local: true) do |form| %>
+<%= render 'layouts/error_messages', model: form.object %>
+       <div class="row2">Card Number</div>
+      <%= form.text_field :number, placeholder: "number", rows: "10" %>
+      <div class="row2">exp_month</div>
+      <%= form.text_field :exp_month, placeholder: "exp_month", rows: "10" %>
+      <div class="row2">exp_year</div>
+       <%= form.text_field :exp_year, placeholder: "exp_year", rows: "10" %>
+      <div class="row2">Security_Code</div>
+      <%= form.text_field :cvc, placeholder: "Security_Code", rows: "10" %>
+      <br><%= form.submit "Purchase" %>
+<% end %>
+ </div>
+</div>
