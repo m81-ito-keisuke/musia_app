@@ -19,7 +19,14 @@
       <%= music.artist_name %>
     <% end %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= music.user.id %>"><%= music.user.nickname %></a></div>
-    <div class="info_show4">¥<%= link_to music.price, new_music_order_path(music.id) %></div>
+    
+    <div class="info_show4">
+    <% if current_user.id != music.user_id %>
+    <%= link_to "¥#{music.price}", new_music_order_path(music.id) %></div>
+    <% else %>
+    <%= "¥#{music.price}" %>
+    </div>
+    <% end %>
 
     <% if user_signed_in? && current_user.id != music.user_id %>
         <% if music.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->
