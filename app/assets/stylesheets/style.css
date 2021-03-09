@@ -1322,3 +1322,48 @@ a.link_following{
   padding: 3px;
   border-radius: 3px;
 }
+
+
+input#order_exp_month{
+  width: 20%;
+  margin-right: 10px;
+}
+  
+input#order_exp_year{
+  width: 20%;
+}
+
+.expiration_date{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 12.5%;
+  
+}
+
+input#order_cvc{
+  display: flex;
+  justify-content: flex-start;
+  width: 20%;
+  margin-left: 12.5%;
+}
+
+
+.product_information{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20%;
+}
+
+
+
+.info2{
+  margin-bottom: 20px;
+  width: 240px;
+  margin-left: 29%;
+  margin-top: 10px;
+  font-size: 16px;
+  z-index: 2;
+  font-weight: bold;
+  color: black;
+  font-family: 'Roboto','Noto Sans JP',sans-serif;
+}
