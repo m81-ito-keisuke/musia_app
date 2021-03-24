@@ -20,7 +20,7 @@
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @music.user.id %>"><%= @music.user.nickname %></a></div>
     <div class="info_show4">
     <% if current_user.id != @music.user_id %>
-    <%= link_to "¥#{@music.price}", music_orders_path(@music.id) %>
+    <%= link_to "¥#{@music.price}", new_music_order_path(@music.id) %>
     <% else %>
     <%= "¥#{@music.price}" %>
     <% end %>

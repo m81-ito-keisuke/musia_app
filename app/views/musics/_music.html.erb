@@ -22,7 +22,7 @@
     
     <div class="info_show4">
     <% if current_user.id != music.user_id %>
-    <%= link_to "¥#{music.price}", music_orders_path(music.id) %></div>
+    <%= link_to "¥#{music.price}", new_music_order_path(music.id) %></div>
     <% else %>
     <%= "¥#{music.price}" %>
     </div>
