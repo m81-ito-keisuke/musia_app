@@ -1,5 +1,4 @@
 class Order < ApplicationRecord
-<<<<<<< HEAD
   has_one_attached :image
   attr_accessor :token
   
@@ -10,6 +9,4 @@ class Order < ApplicationRecord
     validates :exp_year
     validates :cvc
   end
-=======
->>>>>>> parent of 44ca912 (クレカフォームの実装)
 end
