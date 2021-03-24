@@ -18,6 +18,7 @@
     <div class="info_show1"><%= @music.title %></div>
     <div class="info_show1"><%= @music.artist_name %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @music.user.id %>"><%= @music.user.nickname %></a></div>
+<<<<<<< HEAD
     <div class="info_show4">
     <% if current_user.id != @music.user_id %>
     <%= link_to "¥#{@music.price}", music_orders_path(@music.id) %>
@@ -25,6 +26,9 @@
     <%= "¥#{@music.price}" %>
     <% end %>
     </div>  
+=======
+    <div class="info_show4">￥<%= @music.price %></div>  
+>>>>>>> parent of 1f6bcaf (詳細ページにおける購入ページへのリンク)
     </div>
   </div>
 
