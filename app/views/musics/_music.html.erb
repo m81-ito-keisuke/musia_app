@@ -19,6 +19,7 @@
       <%= music.artist_name %>
     <% end %></div>
     <div class="info_show3">Upload by&nbsp;<a href="/users/<%= music.user.id %>"><%= music.user.nickname %></a></div>
+<<<<<<< HEAD
     
     <div class="info_show4">
     <% if current_user.id != music.user_id %>
@@ -27,6 +28,9 @@
     <%= "¥#{music.price}" %>
     </div>
     <% end %>
+=======
+    <div class="info_show4">￥<%= music.price %></div>
+>>>>>>> parent of 44ca912 (クレカフォームの実装)
 
     <% if user_signed_in? && current_user.id != music.user_id %>
         <% if music.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->

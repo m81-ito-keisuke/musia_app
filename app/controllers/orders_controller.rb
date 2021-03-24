@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
 
   def index
+<<<<<<< HEAD
     @order = Order.new
     @music = Music.find(params[:music_id])
     if current_user.id == @music.user_id
       redirect_to root_path
     end
+=======
+>>>>>>> parent of 44ca912 (クレカフォームの実装)
   end
 
   def create
@@ -29,5 +32,5 @@ class OrdersController < ApplicationController
   def order_params
     params.permit(:price).merge(token: params[:token])
   end
-
+  
 end
