@@ -1,0 +1,31 @@
+<div class="contents row row4">
+  <div class="container">
+  <h3>Product Information</h3>
+  <div class="more">
+  <%= image_tag @music.image.variant(resize:'240x240'), class: 'music-image' if @music.image.attached? %>
+    <div class="info2">
+       <div class="info_show2"><%= @music.cd_type.name %></div>
+    <div class="info_show1"><%= @music.title %></div>
+    <div class="info_show1"><%= @music.artist_name %></div>
+    <div class="info_show3">Upload by&nbsp;<a href="/users/<%= @music.user.id %>"><%= @music.user.nickname %></a></div>
+    <div class="info_show4">￥<%= @music.price %></div>
+    </div>
+</div>
+
+<h3 class="credit_card_infomation">Credit Card Infomation</h3>
+
+<%= form_with(model: @order, url: music_orders_path, id: 'charge-form', local: true) do |form| %>
+<%= render 'layouts/error_messages', model: form.object %>
+       <div class="row2">Card Number</div>
+      <%= form.text_field :number, placeholder: "card number", rows: "10" %>
+            <div class="row2">Security Code</div>
+      <%= form.text_field :cvc, placeholder: "cvc", rows: "10" %>
+     <div class="row2">Expiration Date</div>
+    <div class="expiration_date">
+      <%= form.text_field :exp_month, placeholder: "exp month", rows: "10" %>
+       <%= form.text_field :exp_year, placeholder: "exp year", rows: "10" %>
+     </div>
+      <br><%= form.submit "Purchase" %>
+<% end %>
+ </div>
+</div>

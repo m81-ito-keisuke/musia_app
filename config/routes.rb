@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :tracks, only: [:new, :create, :edit, :update, :destroy]
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
-    resources :orders, only: [:new, :create]
+    resources :orders, only: [:index, :create]
     collection do
       get 'search'
       end
