@@ -3,6 +3,7 @@ class MusicsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
+    @order = Order.find_by(music_id: params[:music_id])
     @musics = Music.includes(:user).order('created_at DESC')
     query = 'SELECT * FROM musics'
     # @musics = Music.find_by_sql(query)
@@ -54,6 +55,7 @@ class MusicsController < ApplicationController
   def music_params
     params.require(:music).permit(:image, :title, :artist_name, :price, :cd_type_id).merge(user_id: current_user.id)
   end
+
 
   def set_music
     @music = Music.find(params[:id])

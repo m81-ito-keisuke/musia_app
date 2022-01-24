@@ -22,11 +22,15 @@
     
     <div class="info_show4">
     <% if user_signed_in? && current_user.id != music.user_id %>
-    <%= link_to "¥#{music.price}", music_orders_path(music.id) %></div>
+            <% if user_signed_in? && music.id == @order.music_id %> 
+              <%= "SOLD OUT" %>
+            <% else %>
+              <%= link_to "¥#{music.price}", music_orders_path(music.id) %>
+            <% end %>
     <% else %>
     <%= "¥#{music.price}" %>
-    </div>
     <% end %>
+      </div>
 
     <% if user_signed_in? && current_user.id != music.user_id %>
         <% if music.favorited_by?(current_user) %> <!-- ログインしているユーザーがファボしたかどうかで分岐 -->

@@ -3,33 +3,33 @@ class OrdersController < ApplicationController
   def index
     @order = Order.new
     @music = Music.find(params[:music_id])
-    if current_user.id == @music.user_id
+    if user_signed_in? == false || current_user.id == @music.user_id
       redirect_to root_path
     end
   end
 
   def create
-    @order = Order.new(order_params)
     @music = Music.find(params[:music_id])
+    @order = Order.new(order_params)
     if @order.valid?
-      pay_item
+      pay_music
       @order.save
-      return redirect_to root_path
+      render :create
     else
-      render 'index'
+      render :index
     end
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:price).merge(token: params[:token])
+    params.permit(:user_id, :music_id).merge(token: params[:token], user_id: current_user.id, music_id: params[:music_id])
   end
 
-  def pay_item
+  def pay_music
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]  # 自身のPAY.JPテスト秘密鍵を記述しましょう
     Payjp::Charge.create(
-      amount: order_params[:price],  # 商品の値段
+      amount: @music.price,  # 商品の値段
       card: order_params[:token],    # カードトークン
       currency: 'jpy'                 # 通貨の種類（日本円）
     )

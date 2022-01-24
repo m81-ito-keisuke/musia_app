@@ -3,6 +3,7 @@ class Music < ApplicationRecord
   has_many :tracks, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :favorites
+  has_many :order
   has_one_attached :image
 
   with_options presence: true do

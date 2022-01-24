@@ -16,11 +16,12 @@
 
 <%= form_with(model: @order, url: music_orders_path,id: 'charge-form', local: true) do |form| %>
 <%= render 'layouts/error_messages', model: @order %>
-<%= form.text_field :price, placeholder: "price", type: "hidden", value: @music.price, rows: "10" %>
        <div class="row2">Card Number</div>
       <%= form.text_field :number, placeholder: "card number", rows: "10" %>
             <div class="row2">Security Code</div>
+      <div class="expiration_date cvc">
       <%= form.text_field :cvc, placeholder: "cvc", rows: "10" %>
+      </div>
      <div class="row2">Expiration Date</div>
     <div class="expiration_date">
       <%= form.text_field :exp_month, placeholder: "exp month", rows: "10" %>
