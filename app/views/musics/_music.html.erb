@@ -22,7 +22,7 @@
     
     <div class="info_show4">
     <% if user_signed_in? && current_user.id != music.user_id %>
-            <% if user_signed_in? && music.orders.present? %> 
+            <% if user_signed_in? && music.orders.ids.present? %> 
               <%= "Parchased" %>
             <% else %>
               <%= link_to "¥#{music.price}", music_orders_path(music.id) %>
