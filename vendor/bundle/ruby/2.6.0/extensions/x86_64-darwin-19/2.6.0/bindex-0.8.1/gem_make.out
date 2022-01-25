@@ -1,0 +1,15 @@
+current directory: /Users/itoukeisuke/Library/Mobile Documents/com~apple~CloudDocs/SiA/TECH CAMP/TECH_CAMP application/TECH_CAMP/projects/musia/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/itoukeisuke/.rbenv/versions/2.6.5/bin/ruby -I /Users/itoukeisuke/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20220125-97139-1cartsc.rb extconf.rb
+creating Makefile
+
+current directory: /Users/itoukeisuke/Library/Mobile Documents/com~apple~CloudDocs/SiA/TECH CAMP/TECH_CAMP application/TECH_CAMP/projects/musia/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/itoukeisuke/Library/Mobile Documents/com~apple~CloudDocs/SiA/TECH CAMP/TECH_CAMP application/TECH_CAMP/projects/musia/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/itoukeisuke/Library/Mobile Documents/com~apple~CloudDocs/SiA/TECH CAMP/TECH_CAMP application/TECH_CAMP/projects/musia/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20220125-97139-1k2ftoy/skiptrace/internal
