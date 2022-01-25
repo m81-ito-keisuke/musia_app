@@ -21,6 +21,12 @@ before_action :set_user
     @users = @user.followers
   end
 
+  def parchased
+    @musics = Music.includes(:user).order('created_at DESC')
+    query = 'SELECT * FROM musics'
+    # @musics = Music.find_by_sql(query)
+  end
+
   private
 
   def set_user

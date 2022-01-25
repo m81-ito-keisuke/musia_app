@@ -49,6 +49,7 @@ class MusicsController < ApplicationController
     @musics = SearchMusicsService.search(params[:keyword])
   end
 
+
   private
 
   def music_params
