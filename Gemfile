@@ -81,3 +81,5 @@ gem 'omniauth', '~>1.9.1'
 gem 'payjp'
 
 gem 'uglifier', '~> 4.1', '>= 4.1.8'
+
+gem 'rails_12factor', group: :production
