@@ -3,7 +3,6 @@ class MusicsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @order = Order.find_by(music_id: params[:music_id])
     @musics = Music.includes(:user).order('created_at DESC')
     query = 'SELECT * FROM musics'
     # @musics = Music.find_by_sql(query)

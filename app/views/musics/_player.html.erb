@@ -1,5 +1,9 @@
 <!--再生プレイヤー1-->
+  <% if @music.orders.present? %>
+   <audio src="<%= "#{track.track_file1}" %>" id="sound1">
+   <% else %>
   <audio src="<%= "#{track.track_file1}" %>#t=0,45" id="sound1">
+  <% end %>
     <p>HTML5に対応していません。</p>
     </audio>
   
