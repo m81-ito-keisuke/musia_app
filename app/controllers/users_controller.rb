@@ -25,6 +25,7 @@ before_action :set_user
     @musics = Music.includes(:user).order('created_at DESC')
     query = 'SELECT * FROM musics'
     # @musics = Music.find_by_sql(query)
+    redirect_to root_path unless user_signed_in?
   end
 
   private
