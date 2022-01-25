@@ -4,7 +4,7 @@
 <% end %>
 <div class="contents row">
   <% @musics.each do |music| %>
-  <% if music.orders.present? %>
+  <% if music.order.present? %>
     <%= render partial: "musics/music", locals: { music: music } %>
     <% end %>
   <% end %>
