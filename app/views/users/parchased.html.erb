@@ -4,8 +4,8 @@
 <% end %>
 <div class="contents row">
   <% @musics.each do |music| %>
-  <%# if music.order.nil? == false %>
+  <% if music.order.nil? == false %>
     <%= render partial: "musics/music", locals: { music: music } %>
-    <%# end %>
+    <% end %>
   <% end %>
 </div>

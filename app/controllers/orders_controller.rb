@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def index
     @order = Order.new
     @music = Music.find(params[:music_id])
-    if user_signed_in? == false || current_user.id == @music.user_id # || @music.order.nil? == false
+    if user_signed_in? == false || current_user.id == @music.user_id || @music.order.nil? == false
       redirect_to root_path
     end
   end

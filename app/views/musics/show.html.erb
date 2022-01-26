@@ -21,11 +21,11 @@
 
     <div class="info_show4">
     <% if user_signed_in? && current_user.id != @music.user_id %>
-         <%# if user_signed_in? && @music.order.nil? == false %> 
-              <%# "Purchased" %>
-            <%# else %>
+         <% if user_signed_in? && @music.order.nil? == false %> 
+              <%= "Purchased" %>
+            <% else %>
     <%= link_to "¥#{@music.price}", music_orders_path(@music.id) %>
-         <%# end %>
+         <% end %>
     <% else %>
     <%= "¥#{@music.price}" %>
     <% end %>
